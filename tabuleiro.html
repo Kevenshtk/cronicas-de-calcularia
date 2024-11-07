@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crônicas de Calculário</title>
+  <link rel="stylesheet" href="css/estiloTelaTabuleiro.css">
+  <link rel="stylesheet" href="css/componetesTabuleiro.css">
+  <link rel="stylesheet" href="css/manual.css">
+  <link rel="stylesheet" href="css/cardVitoria.css">
+</head>
+
+<body>
+  <div class="containerBoards">
+    <div id="inicio" class="board">
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell caminho" id="cell-1"></div>
+        <div class="cell caminho" id="cell-2"></div>
+        <div class="cell caminho" id="cell-3"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+    </div>
+
+    <div id="ponte" class="board">
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell caminho" id="cell-4"></div>
+        <div class="cell caminho" id="cell-5"></div>
+        <div class="cell caminho" id="cell-6"></div>
+        <div class="cell caminho" id="cell-7"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+    </div>
+
+    <div id="floresta" class="board">
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell caminho" id="cell-8"></div>
+        <div class="cell caminho" id="cell-9"></div>
+        <div class="cell"></div>
+        <div class="cell caminho" id="cell-13"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell caminho" id="cell-10"></div>
+        <div class="cell caminho" id="cell-11"></div>
+        <div class="cell caminho" id="cell-12"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+    </div>
+
+    <div id="deserto" class="board">
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell caminho" id="cell-14"></div>
+        <div class="cell caminho" id="cell-15"></div>
+        <div class="cell caminho" id="cell-16"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell caminho" id="cell-17"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell caminho" id="cell-18"></div>
+        <div class="cell"></div>
+      </div>
+    </div>
+
+    <div id="final" class="board">
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell caminho" id="cell-44"></div>
+        <div class="cell caminho" id="cell-43"></div>
+        <div class="cell caminho" id="cell-42"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+    </div>
+
+    <div id="labirinto" class="board">
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell caminho" id="cell-38"></div>
+        <div class="cell caminho" id="cell-37"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell caminho" id="cell-39"></div>
+        <div class="cell caminho" id="cell-36"></div>
+        <div class="cell caminho" id="cell-35"></div>
+      </div>
+      <div class="row">
+        <div class="cell caminho" id="cell-41"></div>
+        <div class="cell caminho" id="cell-40"></div>
+        <div class="cell"></div>
+        <div class="cell caminho" id="cell-34"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+    </div>
+
+    <div id="vulcao" class="board">
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell caminho" id="cell-32"></div>
+        <div class="cell caminho" id="cell-31"></div>
+        <div class="cell caminho" id="cell-30"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell caminho" id="cell-33"></div>
+        <div class="cell"></div>
+        <div class="cell caminho" id="cell-29"></div>
+        <div class="cell caminho" id="cell-28"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+    </div>
+
+    <div id="vale" class="board">
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell caminho" id="cell-19"></div>
+        <div class="cell caminho" id="cell-20"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell caminho" id="cell-21"></div>
+      </div>
+      <div class="row">
+        <div class="cell caminho" id="cell-27"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell caminho" id="cell-22"></div>
+      </div>
+      <div class="row">
+        <div class="cell caminho" id="cell-26"></div>
+        <div class="cell caminho" id="cell-25"></div>
+        <div class="cell caminho" id="cell-24"></div>
+        <div class="cell caminho" id="cell-23"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cardPersonagem">
+    <div class="icons" onMouseOut="exibirCardPersonagem()">
+      <div class="icon" id="cardBardo">
+        <img src="img/icons/bardoIcon.png" alt="Personagem Bardo">
+      </div>
+
+      <div class="icon" id="cardDruida">
+        <img src="img/icons/druidaIcon.png" alt="Personagem Druida">
+      </div>
+
+      <div class="icon" id="cardGuerreiro">
+        <img src="img/icons/guerreiroIcon.png" alt="Personagem Guerreiro">
+      </div>
+
+      <div class="icon" id="cardLadino">
+        <img src="img/icons/ladinoIcon.png" alt="Personagem Ladino">
+      </div>
+    </div>
+
+    <div class="card" id="card"></div>
+  </div>
+
+  <div class="manual">
+    <iframe src="manual/Livro.pdf" width="100%" height="600px"></iframe>
+    <img class="close" src="img/icons/close.png" alt="Sair" onclick="exibirManual()">
+  </div>
+
+  <div class="cardVitoria">
+    <img class="pergaminho" src="img/pergaminho.jpg" alt="pergaminho">
+    <a href="index.html"><img class="close" src="img/icons/close.png" alt="Sair"></a>
+  </div>
+
+  <div class="dado">
+    <button id="jogarDado"><img src="img/imgDado/dado-1.png" alt="Dado" id="dadoImg"></button>
+  </div>
+  </div>
+
+  <img class="btn-manual" src="img/icons/manual.png" onclick="exibirManual()">
+
+
+  <div id="gameCard" class="cardPergunta">
+    <h1 id="story"></h1>
+    <h4 id="question"></h4>
+    <div id="options">
+      <form action="#">
+        <label>
+            <input type="radio" name="resposta" id="a" value="a">
+            <span for="a" id="labelA"></span>
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="resposta" id="b" value="b">
+            <span for="b" id="labelB"></span>
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="resposta" id="c" value="c">
+            <span for="c" id="labelC"></span>
+        </label>
+    </form>
+    </div>
+  </div>
+
+  <script src="js/tabuleiro/cardPertunta.js" type="module"></script>
+  <script src="js/tabuleiro/movimento.js" type="module"></script>
+  <script src="js/tabuleiro/perguntas.js" type="module"></script>
+  <script src="js/manual.js"></script>
+  <script src="js/cardPersonagem.js"></script>
+</body>
+</html>

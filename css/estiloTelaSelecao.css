@@ -1,0 +1,184 @@
+body {
+  font-family: Courier, monospace;
+  background: var(--cor-secundaria);
+}
+
+body::before {
+  content: '';
+  background-image: url(../img/fundo-site.png);
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.selecao-de-personagens {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.selecao-de-personagens .personagem-grande {
+  text-align: center;
+  width: 30%;
+  height: 70vh;
+  position: relative;
+}
+
+.selecao-de-personagens .personagem-grande img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.selecao-de-personagens .personagem-grande .nome::before {
+  content: '';
+  height: 30px;
+  width: 100%;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+}
+
+.selecao-de-personagens .personagem-grande .nome h2 {
+  width: 100%;
+  font-size: 27px;
+  color: var(--cor-padrao);
+  font-family: 'commad', sans-serif;
+  position: absolute;
+  bottom: 0;
+}
+
+.selecao-de-personagens .personagem-grande.personagem-jogador-1 .nome::before {
+  background-color: var(--cor-azul-principal);
+}
+
+.selecao-de-personagens .personagem-grande.personagem-jogador-2 .nome::before {
+  background-color: var(--cor-vermelha-principal);
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+}
+
+.selecao-de-personagens .lista-de-personagens {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem,
+.selecao-de-personagens .lista-de-personagens .personagem-2 {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 5px;
+  position: relative;
+  transition: 0.15s ease-in-out;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem img,
+.selecao-de-personagens .lista-de-personagens .personagem-2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem.selecionado {
+  border: 2px solid var(--cor-azul-media);
+  animation: c-glowing-blue .8s ease-in-out infinite;
+  animation-duration: alternate;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem:hover {
+  animation: c-glowing-blue .3s ease-in-out infinite;
+  animation-duration: alternate;
+  transform: scale(1.07);
+  z-index: 2;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem-2.jogador-2-selecionado {
+  border: 2px solid var(--cor-vermelho-media);
+  animation: c-glowing-red .8s ease-in-out infinite;
+  animation-duration: alternate;
+}
+
+.selecao-de-personagens .lista-de-personagens .jogador-2-selecionado:hover {
+  animation: c-glowing-red .3s ease-in-out infinite;
+  animation-duration: alternate;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem .tag,
+.selecao-de-personagens .lista-de-personagens .personagem-2 .tag {
+  display: none;
+  font-family: 'Times New Roman', Times, serif;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: var(--cor-azul-media);
+  transition: opacity .3s ease-in-out;
+  animation: text-glowing-blue .3s ease-in-out infinite;
+  animation-duration: alternate;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem.selecionado .tag,
+.selecao-de-personagens .lista-de-personagens .personagem-2.selecionado .tag {
+  display: block;
+  animation: text-glowing-red .3s ease-in-out infinite;
+  animation-duration: alternate;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem-2.jogador-2-selecionado .tag {
+  display: block;
+  animation: text-glowing-red .3s ease-in-out infinite;
+  animation-duration: alternate;
+}
+
+.btn-iniciarJogo, 
+.btn-1-jogador,
+.btn-2-jogador {
+  width: 150px;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition-duration: 0.5s;
+}
+
+.btn-iniciarJogo{
+  position: absolute;
+  bottom: 10%;
+  left: 46%;
+}
+
+.btn-1-jogador{
+  position: absolute;
+  bottom: 38%;
+  left: 46%;
+}
+
+.btn-2-jogador{
+  position: absolute;
+  bottom: 30%;
+  left: 46%;
+}
+
+.btn-iniciarJogo:hover, .btn-1-jogador:hover, .btn-2-jogador:hover {
+  color: rgb(208, 208, 208);
+  background-color: rgba(0, 0, 0, 0.294);
+}
+
+.card{
+  width: 500px;
+}

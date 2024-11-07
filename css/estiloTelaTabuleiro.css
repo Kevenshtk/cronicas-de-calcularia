@@ -1,0 +1,73 @@
+body {
+    background-image: url(../img/fundo-site.png);
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.containerBoards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#inicio {
+    background-image: url(../img/imgTabuleiro/inicio.jpg);
+    background-size: cover;
+}
+
+#ponte {
+    background-image: url(../img/imgTabuleiro/ponte.jpg);
+    background-size: cover;
+}
+
+#floresta {
+    background-image: url(../img/imgTabuleiro/floresta.jpg);
+    background-size: cover;
+}
+
+#deserto {
+    background-image: url(../img/imgTabuleiro/deserto.jpg);
+    background-size: cover;
+}
+
+#vale {
+    background-image: url(../img/imgTabuleiro/vale.jpg);
+    background-size: cover;
+}
+
+#vulcao {
+    background-image: url(../img/imgTabuleiro/vulcao.jpg);
+    background-size: cover;
+}
+
+#labirinto {
+    background-image: url(../img/imgTabuleiro/labirinto.jpg);
+    background-size: cover;
+}
+
+#final {
+    background-image: url(../img/imgTabuleiro/final.jpg);
+    background-size: cover;
+}
+
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 406px;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.caminho{
+    background-color: rgba(0, 0, 0, 0.218);
+}
