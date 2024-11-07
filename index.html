@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha de Personagem</title>
+    <link rel="stylesheet" href="css/estiloTelaSelecao.css">
+    <link rel="stylesheet" href="css/variaveis.css">
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/animacoes.css" />
+    <link rel="stylesheet" href="css/manual.css">
+</head>
+
+<body>
+    <main>
+        <div class="selecao-de-personagens">
+            <div class="lista">
+                <ul class="lista-de-personagens" onMouseOut="exibirJodador1(); exibirCardPersonagem()">
+                    <li class="personagem selecionado" onclick="escolherPersonagem('jogador1', 'bardo')" id="bardo"
+                        data-name="Bardo">
+                        <span class="tag">1P</span>
+                        <img class="icon" id="cardBardo" src="img/icons/bardoIcon.png" alt="Personagem Bardo">
+                    </li>
+                    <li class="personagem" onclick="escolherPersonagem('jogador1', 'druida')" id="druida"
+                        data-name="Druida">
+                        <span class="tag">1P</span>
+                        <img class="icon" id="cardDruida" src="img/icons/druidaIcon.png" alt="Personagem Druida">
+                    </li>
+                    <li class="personagem" onclick="escolherPersonagem('jogador1', 'guerreiro')" id="guerreiro"
+                        data-name="Guerreiro">
+                        <span class="tag">1P</span>
+                        <img class="icon" id="cardGuerreiro" src="img/icons/guerreiroIcon.png"
+                            alt="Personagem Guerreiro">
+                    </li>
+                    <li class="personagem" onclick="escolherPersonagem('jogador1', 'ladino')" id="ladino"
+                        data-name="Ladino">
+                        <span class="tag">1P</span>
+                        <img class="icon" id="cardLadino" src="img/icons/ladinoIcon.png" alt="Personagem Ladino">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="personagem-grande personagem-jogador-1">
+                <img src="img/imgPersona/bardo.png" alt="Persogenagem selecionado jogador 1" id="personagem-jogador-1">
+                <div class="nome">
+                    <h2 id="nome-jogador-1">Bardo</h2>
+                </div>
+            </div>
+
+            <div class="card" id="card"></div>
+
+            <div class="personagem-grande personagem-jogador-2">
+                <img src="img/imgPersona/druida.png" alt="Personagem selecionado jogador 2" id="personagem-jogador-2">
+                <div class="nome">
+                    <h2 id="nome-jogador-2">Druida</h2>
+                </div>
+            </div>
+
+            <div class="lista">
+                <ul class="lista-de-personagens" onMouseOut="exibirJodador2()">
+                    <li class="personagem-2" onclick="escolherPersonagem('jogador2', 'bardo')" id="bardo"
+                        data-name="Bardo">
+                        <span class="tag">2P</span>
+                        <img class="icon" id="cardBardo" src="img/icons/bardoIcon.png" alt="Personagem Bardo">
+                    </li>
+                    <li class="personagem-2 jogador-2-selecionado" onclick="escolherPersonagem('jogador2', 'druida')"
+                        id="druida" data-name="Druida">
+                        <span class="tag">2P</span>
+                        <img class="icon" id="cardDruida" src="img/icons/druidaIcon.png" alt="Personagem Druida">
+                    </li>
+                    <li class="personagem-2" onclick="escolherPersonagem('jogador2', 'guerreiro')" id="guerreiro"
+                        data-name="Guerreiro">
+                        <span class="tag">2P</span>
+                        <img class="icon" id="cardGuerreiro" src="img/icons/guerreiroIcon.png"
+                            alt="Personagem Guerreiro">
+                    </li>
+                    <li class="personagem-2" onclick="escolherPersonagem('jogador2', 'ladino')" id="ladino"
+                        data-name="Ladino">
+                        <span class="tag">2P</span>
+                        <img class="icon" id="cardLadino" src="img/icons/ladinoIcon.png" alt="Personagem Ladino">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="manual">
+            <iframe src="manual/Livro.pdf" width="100%" height="600px"></iframe>
+            <img class="close" src="img/icons/close.png" alt="Sair" onclick="exibirManual()">
+        </div>
+
+    </main>
+
+    <button id="btn-iniciarJogo" class="btn-1-jogador" onclick="iniciarJogo()">1 Jogador</button>
+    <button id="btn-iniciarJogo" class="btn-2-jogador" onclick="iniciarJogo()">2 Jogadores</button>
+    <button id="btn-iniciarJogo" class="btn-iniciarJogo" onclick="iniciarJogo()">Iniciar Jogo</button>
+    <img class="btn-manual" src="img/icons/manual.png" onclick="exibirManual()">
+
+    <script src="js/cardPersonagem.js"></script>
+    <script src="js/manual.js"></script>
+    <script src="js/telaSelecao/selecaoPersonagem.js"></script>
+    <script src="js/telaSelecao/iniciarJogo.js"></script>
+</body>
+</html>
