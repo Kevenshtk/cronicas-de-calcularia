@@ -1,0 +1,17 @@
+@mixin esconder(){
+    visibility: visible;
+    opacity: 1;
+}
+
+@mixin centralizar(){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition-duration: 0.5s;
+}
+
+@mixin background($url){
+    background-image: $url;
+    background-size: cover;
+}

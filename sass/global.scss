@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+.telaSelecao {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background: $cor-secundaria;
+
+    &::before{
+        content: '';
+        @include background(url(../img/fundo-site.png));
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+    }
+}
+
+.telaTabuleiro{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    @include background(url(../img/fundo-site.png));
+}

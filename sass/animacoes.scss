@@ -1,0 +1,39 @@
+@keyframes c-glowing-blue {
+    0% {
+      box-shadow: 0 0 5px $cor-azul-fraca, 0 0 5px $cor-azul-fraca, 0 0 15px $cor-azul-fraca, 0 0 20px $cor-azul-principal, 0 0 10px $cor-azul-principal, 0 0 10px $cor-azul-principal, 0 0 10px $cor-azul-principal, 0 0 10px $cor-azul-principal
+    }
+  
+    to {
+      box-shadow: 0 0 2.5px $cor-azul-fraca, 0 0 2.5px $cor-azul-fraca, 0 0 7.5px $cor-azul-fraca, 0 0 10px $cor-azul-principal, 0 0 5px $cor-azul-principal, 0 0 5px $cor-azul-principal, 0 0 5px $cor-azul-principal, 0 0 2px $cor-azul-principal
+    }
+}
+  
+@keyframes c-glowing-red {
+    0% {
+      box-shadow: 0 0 5px $cor-marrom-fraco, 0 0 5px $cor-marrom-fraco, 0 0 15px $cor-marrom-fraco, 0 0 20px $cor-vermelha-principal, 0 0 10px $cor-vermelha-principal, 0 0 10px $cor-vermelha-principal, 0 0 10px $cor-vermelha-principal, 0 0 10px $cor-vermelha-principal
+    }
+  
+    to {
+      box-shadow: 0 0 2.5px $cor-marrom-fraco, 0 0 2.5px $cor-marrom-fraco, 0 0 7.5px $cor-marrom-fraco, 0 0 10px $cor-vermelha-principal, 0 0 5px $cor-vermelha-principal, 0 0 5px $cor-vermelha-principal, 0 0 5px $cor-vermelha-principal, 0 0 2px $cor-vermelha-principal
+    }
+}
+  
+@keyframes text-glowing-blue {
+    0% {
+      text-shadow: 0 0 1px $cor-padrao, 0 0 1px $cor-padrao, 0 0 1px $cor-padrao, 0 0 1px $cor-azul-media, 0 0 5px $cor-azul-media, 0 0 2px $cor-azul-media, 0 0 10px $cor-azul-media, 0 0 10px $cor-azul-media
+    }
+  
+    to {
+      text-shadow: 0 0 .5px $cor-padrao, 0 0 .5px $cor-padrao, 0 0 .5px $cor-padrao, 0 0 .5px $cor-azul-media, 0 0 5px $cor-azul-media, 0 0 .5px $cor-azul-media, 0 0 5px $cor-azul-media, 0 0 2px $cor-azul-media
+    }
+}
+  
+@keyframes text-glowing-red {
+    0% {
+      text-shadow: 0 0 1px $cor-marrom-fraco, 0 0 1px $cor-marrom-fraco, 0 0 1px $cor-marrom-fraco, 0 0 1px $cor-vermelha-fraca, 0 0 5px $cor-vermelha-fraca, 0 0 2px $cor-vermelha-fraca, 0 0 10px $cor-vermelha-fraca, 0 0 10px $cor-vermelha-fraca
+    }
+  
+    to {
+      text-shadow: 0 0 .5px $cor-marrom-fraco, 0 0 .5px $cor-marrom-fraco, 0 0 .5px $cor-marrom-fraco, 0 0 .5px $cor-vermelha-fraca, 0 0 5px $cor-vermelha-fraca, 0 0 .5px $cor-vermelha-fraca, 0 0 5px $cor-vermelha-fraca, 0 0 2px $cor-vermelha-fraca
+    }
+}

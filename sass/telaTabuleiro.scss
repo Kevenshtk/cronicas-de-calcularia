@@ -1,0 +1,158 @@
+.containerBoards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .inicio {
+        @include background(url(../img/imgTabuleiro/inicio.jpg));
+    }
+
+    .ponte {
+        @include background(url(../img/imgTabuleiro/ponte.jpg));
+    }
+    
+    .floresta {
+        @include background(url(../img/imgTabuleiro/floresta.jpg));
+    }
+    
+    .deserto {
+        @include background(url(../img/imgTabuleiro/deserto.jpg));
+    }
+    
+    .vale {
+        @include background(url(../img/imgTabuleiro/vale.jpg));
+    }
+    
+    .vulcao {
+        @include background(url(../img/imgTabuleiro/vulcao.jpg));
+    }
+    
+    #labirinto {
+        @include background(url(../img/imgTabuleiro/labirinto.jpg));
+    }
+    
+    #final {
+        @include background(url(../img/imgTabuleiro/final.jpg));
+    }
+}
+
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 406px;
+
+    .row {
+        display: flex;
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            border: 1px solid rgb(0, 0, 0);
+        }
+
+        .caminho{
+            background-color: rgba(0, 0, 0, 0.218);
+        }
+    }
+}
+
+#jogarDado {
+    background: none;
+    border: 0;
+
+    position: absolute;
+    right: 2%;
+    bottom: 10%;
+
+    #dadoImg {
+        width: 90px;
+        cursor: pointer;
+    }
+}
+
+.cardPersonagem {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .icons, .cards {
+        display: flex;
+        flex-direction: column;
+
+        .icons .icon img {
+            width: 120px;
+            transition-duration: 0.10s;
+
+            &:hover{
+                width: 140px;
+            }
+
+            .card{
+                width: 480px;
+            }
+        }
+    }  
+}
+
+.cardPergunta{
+    display: none;
+    width: 48%;
+    height: 40%;
+    background-color: $cor-padrao;
+    border-radius: 10px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.404);
+    padding: 30px;
+
+    @include centralizar();
+
+    #story{
+        font-size: 20px;
+        color: rgb(74, 80, 87);
+    }
+
+    #question{
+        font-size: 20px;
+        font-weight: normal;
+    }
+
+    #options{
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+        color: rgb(74, 80, 87);
+
+        input{
+            margin-bottom: 8px;
+        }
+
+        span:hover{
+            font-weight: bold;
+        }
+
+        button{
+            width: 120px;
+            font-size: 18px;
+            color: green;
+            border: 1px solid green;
+            border-radius: 5px;
+            background: none;
+            padding: 10px;
+        
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            transition-duration: 0.3s;
+
+            &:hover{
+                border: 2px solid green;
+                background-color: rgba(0, 0, 0, 0.158);
+            }
+        }
+    }
+}
