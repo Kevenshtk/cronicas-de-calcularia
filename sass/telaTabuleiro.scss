@@ -88,20 +88,27 @@
     .icons, .cards {
         display: flex;
         flex-direction: column;
+    }  
+    
+    .icons{
+        width: 150px;
 
-        .icons .icon img {
+        .icon img {
             width: 120px;
             transition-duration: 0.10s;
 
             &:hover{
                 width: 140px;
             }
-
-            .card{
-                width: 480px;
-            }
         }
-    }  
+    }
+
+    .card{
+        width: 480px;
+        position: absolute;
+        top: 10%;
+        left: 6%;
+    }
 }
 
 .cardPergunta{
