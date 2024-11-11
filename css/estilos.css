@@ -1,0 +1,473 @@
+@keyframes c-glowing-blue {
+  0% {
+    box-shadow: 0 0 5px #8fbff8, 0 0 5px #8fbff8, 0 0 15px #8fbff8, 0 0 20px #0271F7, 0 0 10px #0271F7, 0 0 10px #0271F7, 0 0 10px #0271F7, 0 0 10px #0271F7;
+  }
+  to {
+    box-shadow: 0 0 2.5px #8fbff8, 0 0 2.5px #8fbff8, 0 0 7.5px #8fbff8, 0 0 10px #0271F7, 0 0 5px #0271F7, 0 0 5px #0271F7, 0 0 5px #0271F7, 0 0 2px #0271F7;
+  }
+}
+@keyframes c-glowing-red {
+  0% {
+    box-shadow: 0 0 5px #ebd5d2, 0 0 5px #ebd5d2, 0 0 15px #ebd5d2, 0 0 20px #D60223, 0 0 10px #D60223, 0 0 10px #D60223, 0 0 10px #D60223, 0 0 10px #D60223;
+  }
+  to {
+    box-shadow: 0 0 2.5px #ebd5d2, 0 0 2.5px #ebd5d2, 0 0 7.5px #ebd5d2, 0 0 10px #D60223, 0 0 5px #D60223, 0 0 5px #D60223, 0 0 5px #D60223, 0 0 2px #D60223;
+  }
+}
+@keyframes text-glowing-blue {
+  0% {
+    text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff, 0 0 1px #ffffff, 0 0 1px #d3ffff, 0 0 5px #d3ffff, 0 0 2px #d3ffff, 0 0 10px #d3ffff, 0 0 10px #d3ffff;
+  }
+  to {
+    text-shadow: 0 0 0.5px #ffffff, 0 0 0.5px #ffffff, 0 0 0.5px #ffffff, 0 0 0.5px #d3ffff, 0 0 5px #d3ffff, 0 0 0.5px #d3ffff, 0 0 5px #d3ffff, 0 0 2px #d3ffff;
+  }
+}
+@keyframes text-glowing-red {
+  0% {
+    text-shadow: 0 0 1px #ebd5d2, 0 0 1px #ebd5d2, 0 0 1px #ebd5d2, 0 0 1px #ffbebe, 0 0 5px #ffbebe, 0 0 2px #ffbebe, 0 0 10px #ffbebe, 0 0 10px #ffbebe;
+  }
+  to {
+    text-shadow: 0 0 0.5px #ebd5d2, 0 0 0.5px #ebd5d2, 0 0 0.5px #ebd5d2, 0 0 0.5px #ffbebe, 0 0 5px #ffbebe, 0 0 0.5px #ffbebe, 0 0 5px #ffbebe, 0 0 2px #ffbebe;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+.telaSelecao {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+}
+.telaSelecao::before {
+  content: "";
+  background-image: url(../img/fundo-site.png);
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+
+.telaTabuleiro {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../img/fundo-site.png);
+  background-size: cover;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.selecao-de-personagens {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.selecao-de-personagens .personagem-grande {
+  text-align: center;
+  width: 30%;
+  height: 70vh;
+  position: relative;
+}
+.selecao-de-personagens .personagem-grande img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.selecao-de-personagens .personagem-grande .nome::before {
+  content: "";
+  height: 30px;
+  width: 100%;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+}
+.selecao-de-personagens .personagem-grande .nome h2 {
+  width: 100%;
+  color: #ffffff;
+  font-family: "commad", sans-serif;
+  font-size: 27px;
+  position: absolute;
+  bottom: 0;
+}
+.selecao-de-personagens .personagem-grande.personagem-jogador-1 .nome::before {
+  background-color: #0271F7;
+}
+.selecao-de-personagens .personagem-grande.personagem-jogador-2 .nome::before {
+  background-color: #D60223;
+}
+
+.lista-de-personagens {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.lista-de-personagens .personagem, .lista-de-personagens .personagem-2 {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 5px;
+  position: relative;
+  transition: 0.15s ease-in-out;
+}
+.lista-de-personagens .personagem img, .lista-de-personagens .personagem-2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.lista-de-personagens .personagem .tag, .lista-de-personagens .personagem-2 .tag {
+  display: none;
+  font-family: "Times New Roman", Times, serif;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: #d3ffff;
+  transition: opacity 0.3s ease-in-out;
+  animation: text-glowing-blue 0.3s ease-in-out infinite;
+  animation-duration: alternate;
+}
+.lista-de-personagens .personagem.selecionado {
+  border: 2px solid #d3ffff;
+  animation: c-glowing-blue 0.8s ease-in-out infinite;
+  animation-duration: alternate;
+}
+.lista-de-personagens .personagem.selecionado .tag {
+  display: block;
+  animation: text-glowing-red 0.3s ease-in-out infinite;
+  animation-duration: alternate;
+}
+.lista-de-personagens .personagem:hover {
+  animation: c-glowing-blue 0.3s ease-in-out infinite;
+  animation-duration: alternate;
+  transform: scale(1.07);
+  z-index: 2;
+}
+.lista-de-personagens .personagem-2.jogador-2-selecionado {
+  border: 2px solid #f89284;
+  animation: c-glowing-red 0.8s ease-in-out infinite;
+  animation-duration: alternate;
+}
+.lista-de-personagens .personagem-2.jogador-2-selecionado:hover {
+  animation: c-glowing-red 0.3s ease-in-out infinite;
+  animation-duration: alternate;
+}
+.lista-de-personagens .personagem-2.jogador-2-selecionado .tag {
+  display: block;
+  animation: text-glowing-red 0.3s ease-in-out infinite;
+  animation-duration: alternate;
+}
+
+.btn-iniciarJogo, .btn-1-jogador, .btn-2-jogador {
+  width: 150px;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition-duration: 0.5s;
+}
+.btn-iniciarJogo:hover, .btn-1-jogador:hover, .btn-2-jogador:hover {
+  color: rgb(208, 208, 208);
+  background-color: rgba(0, 0, 0, 0.294);
+}
+
+.btn-iniciarJogo {
+  position: absolute;
+  bottom: 10%;
+  left: 46%;
+}
+
+.btn-1-jogador {
+  position: absolute;
+  bottom: 38%;
+  left: 46%;
+}
+
+.btn-2-jogador {
+  position: absolute;
+  bottom: 30%;
+  left: 46%;
+}
+
+.card {
+  width: 500px;
+}
+
+.modo-jogo-selecionado {
+  border: 2px solid #f89284;
+  animation: c-glowing-red 0.8s ease-in-out infinite;
+  animation-duration: alternate;
+}
+.modo-jogo-selecionado:hover {
+  animation: c-glowing-red 0.3s ease-in-out infinite;
+  animation-duration: alternate;
+}
+
+.desabilitar {
+  opacity: 40%;
+  cursor: no-drop;
+}
+
+.btn-manual {
+  width: 70px;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.btn-manual:hover {
+  width: 75px;
+}
+
+.manual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(20px);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 100000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition-duration: 0.5s;
+}
+.manual iframe {
+  max-width: 1024px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
+  border: 3px solid #ffffff;
+}
+.manual .close {
+  max-width: 45px;
+  filter: invert(1);
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.manual.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.containerBoards {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  animation: backInDown;
+  animation-duration: 0.9s;
+}
+
+.inicio {
+  background-image: url(../img/imgTabuleiro/inicio.jpg);
+  background-size: cover;
+}
+
+.ponte {
+  background-image: url(../img/imgTabuleiro/ponte.jpg);
+  background-size: cover;
+}
+
+.floresta {
+  background-image: url(../img/imgTabuleiro/floresta.jpg);
+  background-size: cover;
+}
+
+.deserto {
+  background-image: url(../img/imgTabuleiro/deserto.jpg);
+  background-size: cover;
+}
+
+.vale {
+  background-image: url(../img/imgTabuleiro/vale.jpg);
+  background-size: cover;
+}
+
+.vulcao {
+  background-image: url(../img/imgTabuleiro/vulcao.jpg);
+  background-size: cover;
+}
+
+.labirinto {
+  background-image: url(../img/imgTabuleiro/labirinto.jpg);
+  background-size: cover;
+}
+
+.final {
+  background-image: url(../img/imgTabuleiro/final.jpg);
+  background-size: cover;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 406px;
+}
+.board .row {
+  display: flex;
+}
+.board .row .cell {
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgb(0, 0, 0);
+}
+.board .row .caminho {
+  background-color: rgba(0, 0, 0, 0.218);
+}
+
+.containerDado {
+  position: absolute;
+  right: 2%;
+  bottom: 10%;
+}
+.containerDado .dado {
+  background: none;
+  border: 0;
+}
+.containerDado .dado .dadoImg {
+  width: 90px;
+  cursor: pointer;
+}
+
+.cardPersonagem {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.cardPersonagem .icons, .cardPersonagem .cards {
+  display: flex;
+  flex-direction: column;
+}
+.cardPersonagem .icons {
+  width: 150px;
+}
+.cardPersonagem .icons .icon img {
+  width: 120px;
+  transition-duration: 0.1s;
+}
+.cardPersonagem .icons .icon img:hover {
+  width: 140px;
+}
+.cardPersonagem .card {
+  width: 480px;
+  position: absolute;
+  top: 10%;
+  left: 6%;
+}
+
+.cardPergunta {
+  width: 40%;
+  height: 50%;
+  display: none;
+  flex-direction: column;
+  gap: 50px;
+  background-color: rgba(255, 255, 255, 0.603);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.404);
+  padding: 30px;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+}
+.cardPergunta #story {
+  font-size: 20px;
+}
+.cardPergunta #question {
+  font-size: 20px;
+  font-weight: normal;
+}
+.cardPergunta #options {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+.cardPergunta #options input {
+  margin: 0 8px 8px 0;
+}
+.cardPergunta #options span:hover {
+  font-weight: bold;
+}
+.cardPergunta #options button {
+  width: 120px;
+  font-size: 18px;
+  color: green;
+  border: 1px solid green;
+  border-radius: 5px;
+  background: none;
+  padding: 10px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  transition-duration: 0.3s;
+}
+.cardPergunta #options button:hover {
+  background-color: rgba(0, 0, 0, 0.158);
+}
+
+.cardVitoria {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(20px);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 100000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition-duration: 0.5s;
+}
+.cardVitoria .pergaminho {
+  max-width: 1024px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
+  border: 3px solid rgba(0, 0, 0, 0.359);
+}
+.cardVitoria .close {
+  max-width: 45px;
+  filter: invert(1);
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.cardVitoria.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*# sourceMappingURL=estilos.css.map */
