@@ -7,6 +7,9 @@
     flex-wrap: wrap;
     gap: 20px;
 
+    animation: backInDown;
+    animation-duration: 0.9s;
+
     .inicio {
         @include background(url(../img/imgTabuleiro/inicio.jpg));
     }
@@ -112,19 +115,24 @@
 }
 
 .cardPergunta{
+    width: 40%;
+    height: 50%;
     display: none;
-    width: 48%;
-    height: 40%;
-    background-color: $cor-padrao;
+    flex-direction: column;
+    gap: 50px;
+
+    
     border-radius: 10px;
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.404);
     padding: 30px;
 
-    @include centralizar();
+    position: absolute;
+    top: 20%;
+    left: 30%;
 
     #story{
         font-size: 20px;
-        color: rgb(74, 80, 87);
+        
     }
 
     #question{
@@ -136,10 +144,9 @@
         display: flex;
         flex-direction: column;
         font-size: 20px;
-        color: rgb(74, 80, 87);
 
         input{
-            margin-bottom: 8px;
+            margin: 0 8px 8px 0;
         }
 
         span:hover{
@@ -161,7 +168,6 @@
             transition-duration: 0.3s;
 
             &:hover{
-                border: 2px solid green;
                 background-color: rgba(0, 0, 0, 0.158);
             }
         }
