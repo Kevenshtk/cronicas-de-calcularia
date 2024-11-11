@@ -5,42 +5,43 @@
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
 
     animation: backInDown;
     animation-duration: 0.9s;
+}
 
-    .inicio {
-        @include background(url(../img/imgTabuleiro/inicio.jpg));
-    }
 
-    .ponte {
-        @include background(url(../img/imgTabuleiro/ponte.jpg));
-    }
-    
-    .floresta {
-        @include background(url(../img/imgTabuleiro/floresta.jpg));
-    }
-    
-    .deserto {
-        @include background(url(../img/imgTabuleiro/deserto.jpg));
-    }
-    
-    .vale {
-        @include background(url(../img/imgTabuleiro/vale.jpg));
-    }
-    
-    .vulcao {
-        @include background(url(../img/imgTabuleiro/vulcao.jpg));
-    }
-    
-    .labirinto {
-        @include background(url(../img/imgTabuleiro/labirinto.jpg));
-    }
-    
-    .final {
-        @include background(url(../img/imgTabuleiro/final.jpg));
-    }
+.inicio {
+    @include background(url(../img/imgTabuleiro/inicio.jpg));
+}
+
+.ponte {
+    @include background(url(../img/imgTabuleiro/ponte.jpg));
+}
+
+.floresta {
+    @include background(url(../img/imgTabuleiro/floresta.jpg));
+}
+
+.deserto {
+    @include background(url(../img/imgTabuleiro/deserto.jpg));
+}
+
+.vale {
+    @include background(url(../img/imgTabuleiro/vale.jpg));
+}
+
+.vulcao {
+    @include background(url(../img/imgTabuleiro/vulcao.jpg));
+}
+
+.labirinto {
+    @include background(url(../img/imgTabuleiro/labirinto.jpg));
+}
+
+.final {
+    @include background(url(../img/imgTabuleiro/final.jpg));
 }
 
 .board {
