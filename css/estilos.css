@@ -315,12 +315,12 @@ main {
   background-size: cover;
 }
 
-#labirinto {
+.labirinto {
   background-image: url(../img/imgTabuleiro/labirinto.jpg);
   background-size: cover;
 }
 
-#final {
+.final {
   background-image: url(../img/imgTabuleiro/final.jpg);
   background-size: cover;
 }
