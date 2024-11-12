@@ -68,7 +68,7 @@ const perguntasPonte = [
         story: "Caminhando pela ponte, você de repente se depara com um  grupo de serpentes venenosas, que se contorciam e sibilavam ameaçadoramente: Na função de 2º grau AX²+BX+C, A representa a direção da concavidade da parábola da função, A maior que 0 indica que a concavidade é para cima e A menor que 0 indica que a concavidade é para baixo. Instintivamente você recua percebendo o perigo iminente.",
         question: "Na função AX²+5X-3, qual é valor de A, para que a concavidade seja para baixo? ",
         options: ["A maior que 0.", "A igual 0.", "A menor que 0.", "A maior ou igual 0."],
-        correctAnswer: "A menor que 0"
+        correctAnswer: "A menor que 0."
     },
     
     {
@@ -202,8 +202,8 @@ const perguntasDeserto = [
     },
 
     {
-        story: "Na jornada pelo deserto, uma figura solitária se destacava no horizonte. Um andarilho caminhava pela paisagem escaldante. Enquanto se aproximava de você, o mesmo dizia: O expoente de uma variável, representa quantas vezes você vai repetir esse número na multiplicação, X2 repete duas vezes, X3repete três e assim sucessivamente.",
-        question: "Qual é o f(x) da função X3, quando X for 2?",
+        story: "Na jornada pelo deserto, uma figura solitária se destacava no horizonte. Um andarilho caminhava pela paisagem escaldante. Enquanto se aproximava de você, o mesmo dizia: O expoente de uma variável, representa quantas vezes você vai repetir esse número na multiplicação, X² repete duas vezes, X³ repete três e assim sucessivamente.",
+        question: "Qual é o f(x) da função X³, quando X for 2?",
         options: ["f(x) = 10.", "f(x) = 15.", "f(x) = 9.", "f(x) = 8."],
         correctAnswer: "f(x) = 8. "
     },
@@ -248,7 +248,7 @@ const perguntasVale = [
     {
         story: "Navegando pelas águas do pântano uma silhueta majestosa surge entre os galhos retorcidos das árvores, revelando ser um urso coruja, você tenta comunicação dizendo: A função de 2º grau AX²+BX+C pode possuir até duas raízes, para acha-las basta usar a equação (x = (-B +- raiz de Δ) / (2 x A)), onde você vai somar ou subtrair o valor negativo de B pela raiz quadrada do Δ e dividir por duas o valor de A.",
         question: "Na função X²-3X+2, onde Δ equivale a 1, quais os valores das raízes?",
-        options: ["ão 2 e 2.", "ão 2 e 3.", "ão 3 e 1.", "ão 1 e 2."],
+        options: ["são 2 e 2.", "são 2 e 3.", "são 3 e 1.", "são 1 e 2."],
         correctAnswer: "são 1 e 2."
     },
 
