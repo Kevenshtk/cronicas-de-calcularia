@@ -10,92 +10,368 @@
 </head>
 
 <body>
-    <main>
-        <div class="selecao-de-personagens">
-            <div class="lista">
-                <ul class="lista-de-personagens" onMouseOut="exibirJodador1(); exibirCardPersonagem()">
-                    <li class="personagem selecionado" onclick="escolherPersonagem('jogador1', 'bardo')" id="bardo"
-                        data-name="Bardo">
-                        <span class="tag">1P</span>
-                        <img class="icon" id="cardBardo" src="img/icons/bardoIcon.png" alt="Personagem Bardo">
-                    </li>
-                    <li class="personagem" onclick="escolherPersonagem('jogador1', 'druida')" id="druida"
-                        data-name="Druida">
-                        <span class="tag">1P</span>
-                        <img class="icon" id="cardDruida" src="img/icons/druidaIcon.png" alt="Personagem Druida">
-                    </li>
-                    <li class="personagem" onclick="escolherPersonagem('jogador1', 'guerreiro')" id="guerreiro"
-                        data-name="Guerreiro">
-                        <span class="tag">1P</span>
-                        <img class="icon" id="cardGuerreiro" src="img/icons/guerreiroIcon.png"
-                            alt="Personagem Guerreiro">
-                    </li>
-                    <li class="personagem" onclick="escolherPersonagem('jogador1', 'ladino')" id="ladino"
-                        data-name="Ladino">
-                        <span class="tag">1P</span>
-                        <img class="icon" id="cardLadino" src="img/icons/ladinoIcon.png" alt="Personagem Ladino">
-                    </li>
-                </ul>
-            </div>
-
-            <div class="personagem-grande personagem-jogador-1">
-                <img src="img/imgPersona/bardo.png" alt="Persogenagem selecionado jogador 1" id="personagem-jogador-1">
-                <div class="nome">
-                    <h2 id="nome-jogador-1">Bardo</h2>
+    <section id="telaSelecao" class="telaSelecao">
+        <main>
+            <div class="selecao-de-personagens">
+                <div class="lista" id="listaJogador-1">
+                    <ul class="lista-de-personagens" onMouseOut="exibirJogador(); exibirCardPersonagem1()">
+                        <li class="personagem selecionado" onclick="enviarEscolha('jogador1', 'bardo')" id="bardo"
+                            data-name="Bardo">
+                            <span class="tag">1P</span>
+                            <img class="icon" id="cardBardo" src="img/icons/bardoIcon.png" alt="Personagem Bardo">
+                        </li>
+                        <li class="personagem" onclick="enviarEscolha('jogador1', 'druida')" id="druida"
+                            data-name="Druida">
+                            <span class="tag">1P</span>
+                            <img class="icon" id="cardDruida" src="img/icons/druidaIcon.png" alt="Personagem Druida">
+                        </li>
+                        <li class="personagem" onclick="enviarEscolha('jogador1', 'guerreiro')" id="guerreiro"
+                            data-name="Guerreiro">
+                            <span class="tag">1P</span>
+                            <img class="icon" id="cardGuerreiro" src="img/icons/guerreiroIcon.png"
+                                alt="Personagem Guerreiro">
+                        </li>
+                        <li class="personagem" onclick="enviarEscolha('jogador1', 'ladino')" id="ladino"
+                            data-name="Ladino">
+                            <span class="tag">1P</span>
+                            <img class="icon" id="cardLadino" src="img/icons/ladinoIcon.png" alt="Personagem Ladino">
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="personagem-grande personagem-jogador-1" id="personagemJogador-1" value="">
+                    <img src="img/imgPersona/bardo.png" alt="Persogenagem selecionado jogador 1" id="personagem-jogador-1">
+                    <div class="nome">
+                        <h2 id="nome-jogador-1">Bardo</h2>
+                    </div>
+                </div>
+    
+                <div class="card" id="card"></div>
+    
+                <div class="personagem-grande personagem-jogador-2" id="personagemJogador-2" value="">
+                    <img src="img/imgPersona/druida.png" alt="Personagem selecionado jogador 2" id="personagem-jogador-2">
+                    <div class="nome">
+                        <h2 id="nome-jogador-2">Druida</h2>
+                    </div>
+                </div>
+    
+                <div class="lista" id="listaJogador-2">
+                    <ul class="lista-de-personagens" onMouseOut="exibirJogador()">
+                        <li class="personagem-2" onclick="enviarEscolha('jogador2', 'bardo')" id="bardo"
+                            data-name="Bardo">
+                            <span class="tag">2P</span>
+                            <img class="icon" id="cardBardo" src="img/icons/bardoIcon.png" alt="Personagem Bardo">
+                        </li>
+                        <li class="personagem-2 jogador-2-selecionado" onclick="enviarEscolha('jogador2', 'druida')"
+                            id="druida" data-name="Druida">
+                            <span class="tag">2P</span>
+                            <img class="icon" id="cardDruida" src="img/icons/druidaIcon.png" alt="Personagem Druida">
+                        </li>
+                        <li class="personagem-2" onclick="enviarEscolha('jogador2', 'guerreiro')" id="guerreiro"
+                            data-name="Guerreiro">
+                            <span class="tag">2P</span>
+                            <img class="icon" id="cardGuerreiro" src="img/icons/guerreiroIcon.png"
+                                alt="Personagem Guerreiro">
+                        </li>
+                        <li class="personagem-2" onclick="enviarEscolha('jogador2', 'ladino')" id="ladino"
+                            data-name="Ladino">
+                            <span class="tag">2P</span>
+                            <img class="icon" id="cardLadino" src="img/icons/ladinoIcon.png" alt="Personagem Ladino">
+                        </li>
+                    </ul>
                 </div>
             </div>
+    
+            <div class="manual">
+                <iframe src="manual/Livro.pdf" width="100%" height="600px"></iframe>
+                <img class="close" src="img/icons/close.png" alt="Sair" onclick="exibirManual()">
+            </div>
+        </main>
 
-            <div class="card" id="card"></div>
+        <button id="btn-modo1" class="btn-1-jogador" onclick="modoJogo1()">1 Jogador</button>
+        <button id="btn-modo2" class="btn-2-jogador desabilitar modo-jogo-selecionado" onclick="modoJogo2()">2 Jogadores</button>
+        <button id="btn-iniciarJogo" class="btn-iniciarJogo" onclick="iniciarJogo()" value="2">Iniciar Jogo</button>
+        
+        <img class="btn-manual" src="img/icons/manual.png" onclick="exibirManual()">
+    </section>
 
-            <div class="personagem-grande personagem-jogador-2">
-                <img src="img/imgPersona/druida.png" alt="Personagem selecionado jogador 2" id="personagem-jogador-2">
-                <div class="nome">
-                    <h2 id="nome-jogador-2">Druida</h2>
-                </div>
+
+    <section id="telaTabuleiro" class="telaTabuleiro">
+        <div class="containerBoards">
+            <div id="inicio" class="board inicio">
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell caminho" id="cell-1"></div>
+                <div class="cell caminho" id="cell-2"></div>
+                <div class="cell caminho" id="cell-3"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
             </div>
 
-            <div class="lista">
-                <ul class="lista-de-personagens" onMouseOut="exibirJodador2()">
-                    <li class="personagem-2" onclick="escolherPersonagem('jogador2', 'bardo')" id="bardo"
-                        data-name="Bardo">
-                        <span class="tag">2P</span>
-                        <img class="icon" id="cardBardo" src="img/icons/bardoIcon.png" alt="Personagem Bardo">
-                    </li>
-                    <li class="personagem-2 jogador-2-selecionado" onclick="escolherPersonagem('jogador2', 'druida')"
-                        id="druida" data-name="Druida">
-                        <span class="tag">2P</span>
-                        <img class="icon" id="cardDruida" src="img/icons/druidaIcon.png" alt="Personagem Druida">
-                    </li>
-                    <li class="personagem-2" onclick="escolherPersonagem('jogador2', 'guerreiro')" id="guerreiro"
-                        data-name="Guerreiro">
-                        <span class="tag">2P</span>
-                        <img class="icon" id="cardGuerreiro" src="img/icons/guerreiroIcon.png"
-                            alt="Personagem Guerreiro">
-                    </li>
-                    <li class="personagem-2" onclick="escolherPersonagem('jogador2', 'ladino')" id="ladino"
-                        data-name="Ladino">
-                        <span class="tag">2P</span>
-                        <img class="icon" id="cardLadino" src="img/icons/ladinoIcon.png" alt="Personagem Ladino">
-                    </li>
-                </ul>
+            <div id="ponte" class="board ponte">
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell caminho" id="cell-4"></div>
+                <div class="cell caminho" id="cell-5"></div>
+                <div class="cell caminho" id="cell-6"></div>
+                <div class="cell caminho" id="cell-7"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            </div>
+
+            <div id="floresta" class="board floresta">
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell caminho" id="cell-8"></div>
+                <div class="cell caminho" id="cell-9"></div>
+                <div class="cell"></div>
+                <div class="cell caminho" id="cell-13"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell caminho" id="cell-10"></div>
+                <div class="cell caminho" id="cell-11"></div>
+                <div class="cell caminho" id="cell-12"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            </div>
+
+            <div id="deserto" class="board deserto">
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell caminho" id="cell-14"></div>
+                <div class="cell caminho" id="cell-15"></div>
+                <div class="cell caminho" id="cell-16"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell caminho" id="cell-17"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell caminho" id="cell-18"></div>
+                <div class="cell"></div>
+            </div>
+            </div>
+
+            <div id="final" class="board final">
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell caminho" id="cell-44"></div>
+                <div class="cell caminho" id="cell-43"></div>
+                <div class="cell caminho" id="cell-42"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            </div>
+
+            <div id="labirinto" class="board labirinto">
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell caminho" id="cell-38"></div>
+                <div class="cell caminho" id="cell-37"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell caminho" id="cell-39"></div>
+                <div class="cell caminho" id="cell-36"></div>
+                <div class="cell caminho" id="cell-35"></div>
+            </div>
+            <div class="row">
+                <div class="cell caminho" id="cell-41"></div>
+                <div class="cell caminho" id="cell-40"></div>
+                <div class="cell"></div>
+                <div class="cell caminho" id="cell-34"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            </div>
+
+            <div id="vulcao" class="board vulcao">
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell caminho" id="cell-32"></div>
+                <div class="cell caminho" id="cell-31"></div>
+                <div class="cell caminho" id="cell-30"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell caminho" id="cell-33"></div>
+                <div class="cell"></div>
+                <div class="cell caminho" id="cell-29"></div>
+                <div class="cell caminho" id="cell-28"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            </div>
+
+            <div id="vale" class="board vale">
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell caminho" id="cell-19"></div>
+                <div class="cell caminho" id="cell-20"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell caminho" id="cell-21"></div>
+            </div>
+            <div class="row">
+                <div class="cell caminho" id="cell-27"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell caminho" id="cell-22"></div>
+            </div>
+            <div class="row">
+                <div class="cell caminho" id="cell-26"></div>
+                <div class="cell caminho" id="cell-25"></div>
+                <div class="cell caminho" id="cell-24"></div>
+                <div class="cell caminho" id="cell-23"></div>
+            </div>
             </div>
         </div>
 
-        <div class="manual">
-            <iframe src="manual/Livro.pdf" width="100%" height="600px"></iframe>
-            <img class="close" src="img/icons/close.png" alt="Sair" onclick="exibirManual()">
+        <div class="cardPersonagem" id="cardPersonagem">
+            <div class="icons" onMouseOut="exibirCardPersonagem()">
+            <div class="icon" id="cardBardo">
+                <img src="img/icons/bardoIcon.png" alt="Personagem Bardo">
+            </div>
+
+            <div class="icon" id="cardDruida">
+                <img src="img/icons/druidaIcon.png" alt="Personagem Druida">
+            </div>
+
+            <div class="icon" id="cardGuerreiro">
+                <img src="img/icons/guerreiroIcon.png" alt="Personagem Guerreiro">
+            </div>
+
+            <div class="icon" id="cardLadino">
+                <img src="img/icons/ladinoIcon.png" alt="Personagem Ladino">
+            </div>
+            </div>
+
+            <div class="card" id="cardTabuleiro"></div>
         </div>
 
-    </main>
+        <div class="cardVitoria">
+            <img class="pergaminho" src="img/pergaminho.jpg" alt="pergaminho">
+            <a href="index.html"><img class="close" src="img/icons/close.png" alt="Sair"></a>
+        </div>
 
-    <button id="btn-iniciarJogo" class="btn-1-jogador" onclick="iniciarJogo()">1 Jogador</button>
-    <button id="btn-iniciarJogo" class="btn-2-jogador" onclick="iniciarJogo()">2 Jogadores</button>
-    <button id="btn-iniciarJogo" class="btn-iniciarJogo" onclick="iniciarJogo()">Iniciar Jogo</button>
-    <img class="btn-manual" src="img/icons/manual.png" onclick="exibirManual()">
+        <div class="containerDado" id="dado">
+            <button class="dado" id="jogarDado" onclick="rolarDado()"><img src="img/imgDado/dado-1.png" alt="Dado" class="dadoImg" id="dadoImg"></button>
+        </div>
+        </div>
 
-    <script src="js/cardPersonagem.js"></script>
-    <script src="js/manual.js"></script>
-    <script src="js/telaSelecao/selecaoPersonagem.js"></script>
-    <script src="js/telaSelecao/iniciarJogo.js"></script>
+        <div id="gameCard" class="cardPergunta animate__animated">
+            <h1 id="story"></h1>
+            <h4 id="question"></h4>
+            <div id="options">
+            <form action="#">
+                <label>
+                    <input type="radio" name="resposta" id="a" value="a">
+                    <span for="a" id="labelA"></span>
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="resposta" id="b" value="b">
+                    <span for="b" id="labelB"></span>
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="resposta" id="c" value="c">
+                    <span for="c" id="labelC"></span>
+                </label>
+            </form>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="js/index.js"></script>
+       
 </body>
 </html>
