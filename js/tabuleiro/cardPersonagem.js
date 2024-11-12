@@ -1,6 +1,6 @@
-function exibirCardPersonagem() {
+export function exibirCardPersonagem() {
     const cards = document.querySelectorAll('.icon');
-    const cardElement = document.getElementById('card');
+    const cardElement = document.getElementById('cardTabuleiro');
 
     cards.forEach((icon) => {
         icon.addEventListener('mouseenter', () => {
