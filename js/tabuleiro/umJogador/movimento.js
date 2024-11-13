@@ -1,11 +1,10 @@
 import exibirCard from './cardPertunta.js';
 
 let playerAtual = 1;
-let playerPositions = { 1: 0, 2: 0 };
+let playerPositions = {1: 0};
 let boardAtual = 'inicio';
-
-export function rollDado2() {
-
+    
+export function rollDado1() {
     let resultDado;
 
     switch(boardAtual) {
@@ -35,7 +34,7 @@ export function rollDado2() {
     const diceImg = document.getElementById('dadoImg');
     diceImg.src = `img/imgDado/dado-${resultDado}.png`;
 
-    const color = playerAtual === 1 ? 'blue' : 'red';
+    const color = 'blue';
     movePlayer(color, resultDado);
 }
 
@@ -105,8 +104,4 @@ function limparCell(boards, position, playerColor) {
     });
 }
 
-function torcarPalayer(){
-   playerAtual = playerAtual === 1 ? 2 : 1;
-}
-
-export {movePlayer, torcarPalayer}
+export {movePlayer}

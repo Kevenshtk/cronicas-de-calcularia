@@ -1,6 +1,6 @@
 import {perguntasInicio, perguntasPonte, perguntasFloresta, perguntasDeserto, perguntasVale, 
 perguntasVulcao, perguntasLabirinto, perguntasCastelo, perguntasFinal} from "../dados/perguntas.js";
-import {movePlayer, torcarPalayer} from "./movimento.js";
+import {movePlayer} from "./movimento.js";
 
 let perguntas;
 
@@ -92,19 +92,16 @@ function checkPergunta(color, boardAtual) {
             } else {
                 alert('Resposta correta! Você avança um passo.');
                 movePlayer(color, 1);
-                torcarPalayer();
             }
 
         } else {
             if(boardAtual === 'fim'){
                 alert('Resposta incorreta! Você volta um tabuleiro.');
                 movePlayer(color, -4);
-                torcarPalayer();
 
             } else {
                 alert('Resposta incorreta! Você volta um passo.\n\nRESPOSTA CERTA: '+correctAnswer);
                 movePlayer(color, -1);
-                torcarPalayer();
             }
         }
 
