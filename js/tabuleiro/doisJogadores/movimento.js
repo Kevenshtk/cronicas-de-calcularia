@@ -1,12 +1,11 @@
 import exibirCard from './cardPertunta.js';
 
-document.getElementById('jogarDado').addEventListener('click', rollDado);
-
 let playerAtual = 1;
 let playerPositions = { 1: 0, 2: 0 };
 let boardAtual = 'inicio';
 
-function rollDado() {
+export function rollDado2() {
+
     let resultDado;
 
     switch(boardAtual) {
