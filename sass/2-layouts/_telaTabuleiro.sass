@@ -1,0 +1,20 @@
+@use '../_utilities' as *
+    
+.telaTabuleiro
+    display: none
+    width: 100vw
+    height: 100vh
+    @include background(url(../../img/fundo-site.png))
+
+    .containerBoards 
+        width: 100%
+        height: 100vh
+        display: flex
+        justify-content: center
+        align-content: center
+        flex-wrap: wrap
+        gap: 10px
+
+        animation: backInDown
+        animation-duration: 0.9s
+

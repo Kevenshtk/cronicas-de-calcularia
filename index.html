@@ -5,14 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escolha de Personagem</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <!-- Font title -->
+    <link href="https://fonts.cdnfonts.com/css/berry-rotunda" rel="stylesheet">
+    <!-- Animation CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
 </head>
 
 <body>
     <section id="telaSelecao" class="telaSelecao">
-        <main>
-            <div class="selecao-de-personagens">
+        <h1 class="titulo">Crônicas de Calculária</h1>
+
+        <div class="selecao-de-personagens">
                 <div class="lista" id="listaJogador-1">
                     <ul class="lista-de-personagens" onMouseOut="exibirJogador(); exibirCardPersonagem1()">
                         <li class="personagem selecionado" onclick="enviarEscolha('jogador1', 'bardo')" id="bardo"
@@ -81,19 +87,30 @@
                     </ul>
                 </div>
             </div>
-    
-            <div class="manual">
-                <iframe src="manual/Livro.pdf" width="100%" height="600px"></iframe>
-                <img class="close" src="img/icons/close.png" alt="Sair" onclick="exibirManual()">
-            </div>
-        </main>
-
+            
         <button id="btn-modo1" class="btn-1-jogador" onclick="modoJogo1()">1 Jogador</button>
         <button id="btn-modo2" class="btn-2-jogador desabilitar modo-jogo-selecionado" onclick="modoJogo2()">2 Jogadores</button>
         <button id="btn-iniciarJogo" class="btn-iniciarJogo" onclick="iniciarJogo()" value="2">Iniciar Jogo</button>
         
         <img class="btn-manual" src="img/icons/manual.png" onclick="exibirManual()">
+        <div class="container-manual">
+            <iframe src="manual/Livro.pdf" width="100%" height="600px"></iframe>
+            <img class="btn-close" src="img/icons/close.png" alt="Sair" onclick="exibirManual()">
+        </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <section id="telaTabuleiro" class="telaTabuleiro">
@@ -372,6 +389,5 @@
     </section>
 
     <script type="module" src="js/index.js"></script>
-       
 </body>
 </html>

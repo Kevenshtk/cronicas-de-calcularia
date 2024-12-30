@@ -1,0 +1,34 @@
+@use '../1-base/variables' as *
+@use '../_utilities' as *
+
+.telaSelecao 
+    width: 100vw
+    height: 100vh
+    background: $color-secundary
+
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+
+    &::before
+        content: ''
+        @include background(url(../../img/fundo-site.png))
+        position: absolute
+        width: 100%
+        height: 100%
+        opacity: 0.3
+
+    .titulo
+        font-family: 'Berry Rotunda', sans-serif 
+        font-weight: normal
+        font-size: 80px            
+        text-align: center
+        color: white
+        padding-top: 20px
+
+    .selecao-de-personagens
+        display: flex
+        align-items: flex-start
+        justify-content: space-between
