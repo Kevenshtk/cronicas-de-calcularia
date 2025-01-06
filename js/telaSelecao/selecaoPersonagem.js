@@ -45,7 +45,7 @@ export function exibirCardPersonagem1() {
 
             icon.classList.add('selecionado');
 
-            cardElement.innerHTML = `<img class="card" src="img/imgPersona/${idSelecionado}.jpeg" alt="Personagem ${idSelecionado}">`;
+            cardElement.innerHTML = `<img class="cardPersonagem" src="img/imgPersona/${idSelecionado}.jpeg" alt="Personagem ${idSelecionado}">`;
         });
 
         icon.addEventListener('mouseleave', () => {

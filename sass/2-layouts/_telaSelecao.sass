@@ -1,16 +1,14 @@
 @use '../1-base/variables' as *
 @use '../_utilities' as *
 
-.telaSelecao 
+.tela-de-selecao 
     width: 100vw
     height: 100vh
     background: $color-secundary
 
-    min-height: 100vh
     display: flex
     flex-direction: column
-    justify-content: center
-
+    justify-content: space-around
 
     &::before
         content: ''
@@ -20,15 +18,37 @@
         height: 100%
         opacity: 0.3
 
-    .titulo
+    &-titulo
         font-family: 'Berry Rotunda', sans-serif 
         font-weight: normal
         font-size: 80px            
         text-align: center
         color: white
-        padding-top: 20px
 
     .selecao-de-personagens
+        height: 510px
         display: flex
-        align-items: flex-start
         justify-content: space-between
+        align-items: center
+        
+        &-card-btns, &-jogador-1, &-jogador-2
+            width: 30%
+            height: 100%
+
+        &-jogador-1, &-jogador-2
+            display: flex
+            justify-content: space-around
+
+        &-card-btns
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            align-items: center
+            gap: 30px
+
+            .container-btn
+                display: flex
+                flex-direction: column
+                justify-content: space-around
+                gap: 8px
+                z-index: 1000

@@ -48,16 +48,15 @@ a {
   text-decoration: none;
 }
 
-.telaSelecao {
+.tela-de-selecao {
   width: 100vw;
   height: 100vh;
   background: #000000;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
 }
-.telaSelecao::before {
+.tela-de-selecao::before {
   content: "";
   background-image: url(../../img/fundo-site.png);
   background-size: cover;
@@ -66,18 +65,40 @@ a {
   height: 100%;
   opacity: 0.3;
 }
-.telaSelecao .titulo {
+.tela-de-selecao-titulo {
   font-family: "Berry Rotunda", sans-serif;
   font-weight: normal;
   font-size: 80px;
   text-align: center;
   color: white;
-  padding-top: 20px;
 }
-.telaSelecao .selecao-de-personagens {
+.tela-de-selecao .selecao-de-personagens {
+  height: 510px;
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
+  align-items: center;
+}
+.tela-de-selecao .selecao-de-personagens-card-btns, .tela-de-selecao .selecao-de-personagens-jogador-1, .tela-de-selecao .selecao-de-personagens-jogador-2 {
+  width: 30%;
+  height: 100%;
+}
+.tela-de-selecao .selecao-de-personagens-jogador-1, .tela-de-selecao .selecao-de-personagens-jogador-2 {
+  display: flex;
+  justify-content: space-around;
+}
+.tela-de-selecao .selecao-de-personagens-card-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+.tela-de-selecao .selecao-de-personagens-card-btns .container-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 8px;
+  z-index: 1000;
 }
 
 .telaTabuleiro {
@@ -208,7 +229,7 @@ a {
   animation-duration: alternate;
 }
 
-.cardPersonagem {
+.cardPersonagem1 {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -216,24 +237,24 @@ a {
   top: 0;
   left: 0;
 }
-.cardPersonagem .icons, .cardPersonagem .cards {
+.cardPersonagem1 .icons, .cardPersonagem1 .cards {
   display: flex;
   flex-direction: column;
 }
-.cardPersonagem .icons {
+.cardPersonagem1 .icons {
   width: 150px;
 }
-.cardPersonagem .icons .icon img {
+.cardPersonagem1 .icons .icon img {
   width: 120px;
   transition-duration: 0.1s;
 }
-.cardPersonagem .icons .icon img:hover {
+.cardPersonagem1 .icons .icon img:hover {
   width: 140px;
 }
 
 .personagem-grande {
   text-align: center;
-  width: 30%;
+  width: 40%;
   height: 50vh;
   position: relative;
 }
@@ -268,11 +289,11 @@ a {
   background-color: #D60223;
 }
 
-.card {
-  width: 500px;
+.selecao-de-personagens-card-btns .cardPersonagem {
+  width: 400px;
 }
 
-.cardPersonagem .card {
+.telaTabuleiro .cardPersonagem .card {
   width: 480px;
   position: absolute;
   top: 10%;
@@ -376,21 +397,7 @@ a {
 }
 
 .btn-iniciarJogo {
-  position: absolute;
-  bottom: 10%;
-  left: 46%;
-}
-
-.btn-1-jogador {
-  position: absolute;
-  bottom: 38%;
-  left: 46%;
-}
-
-.btn-2-jogador {
-  position: absolute;
-  bottom: 30%;
-  left: 46%;
+  margin-top: 10px;
 }
 
 .modo-jogo-selecionado {
