@@ -44,75 +44,127 @@ ul {
   list-style: none;
 }
 
-.telaSelecao {
-  display: block;
+a {
+  text-decoration: none;
+}
+
+.tela-de-selecao {
   width: 100vw;
   height: 100vh;
   background: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
-.telaSelecao::before {
+.tela-de-selecao::before {
   content: "";
-  background-image: url(../img/fundo-site.png);
+  background-image: url(../../img/fundo-site.png);
   background-size: cover;
   position: absolute;
   width: 100%;
   height: 100%;
   opacity: 0.3;
 }
+.tela-de-selecao-titulo {
+  font-family: "Berry Rotunda", sans-serif;
+  font-weight: normal;
+  font-size: 80px;
+  text-align: center;
+  color: white;
+}
+.tela-de-selecao .selecao-de-personagens {
+  height: 510px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tela-de-selecao .selecao-de-personagens-card-btns, .tela-de-selecao .selecao-de-personagens-jogador-1, .tela-de-selecao .selecao-de-personagens-jogador-2 {
+  width: 30%;
+  height: 100%;
+}
+.tela-de-selecao .selecao-de-personagens-jogador-1, .tela-de-selecao .selecao-de-personagens-jogador-2 {
+  display: flex;
+  justify-content: space-around;
+}
+.tela-de-selecao .selecao-de-personagens-card-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+.tela-de-selecao .selecao-de-personagens-card-btns .container-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 8px;
+  z-index: 1000;
+}
 
 .telaTabuleiro {
   display: none;
   width: 100vw;
   height: 100vh;
-  background-image: url(../img/fundo-site.png);
+  background-image: url(../../img/fundo-site.png);
   background-size: cover;
 }
-
-main {
-  min-height: 100vh;
+.telaTabuleiro .containerBoards {
+  width: 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  animation: backInDown;
+  animation-duration: 0.9s;
 }
 
-.selecao-de-personagens {
+.btn-manual {
+  width: 70px;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.btn-manual:hover {
+  width: 75px;
+}
+
+.container-manual {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-.selecao-de-personagens .personagem-grande {
-  text-align: center;
-  width: 30%;
-  height: 70vh;
-  position: relative;
-}
-.selecao-de-personagens .personagem-grande img {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(20px);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 100000;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition-duration: 0.5s;
 }
-.selecao-de-personagens .personagem-grande .nome::before {
-  content: "";
-  height: 30px;
-  width: 100%;
+.container-manual iframe {
+  max-width: 1024px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
+  border: 3px solid #ffffff;
+}
+.container-manual .btn-close {
+  max-width: 45px;
+  filter: invert(1);
+  cursor: pointer;
   position: absolute;
-  bottom: -15px;
-  left: 0;
+  top: 30px;
+  right: 30px;
 }
-.selecao-de-personagens .personagem-grande .nome h2 {
-  width: 100%;
-  color: #ffffff;
-  font-family: "commad", sans-serif;
-  font-size: 27px;
-  position: absolute;
-  bottom: 0;
-}
-.selecao-de-personagens .personagem-grande.personagem-jogador-1 .nome::before {
-  background-color: #0271F7;
-}
-.selecao-de-personagens .personagem-grande.personagem-jogador-2 .nome::before {
-  background-color: #D60223;
+
+.container-manual.active {
+  visibility: visible;
+  opacity: 1;
 }
 
 .lista-de-personagens {
@@ -177,186 +229,7 @@ main {
   animation-duration: alternate;
 }
 
-.btn-iniciarJogo, .btn-1-jogador, .btn-2-jogador {
-  width: 150px;
-  padding: 15px;
-  border-radius: 5px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  transition-duration: 0.5s;
-}
-.btn-iniciarJogo:hover, .btn-1-jogador:hover, .btn-2-jogador:hover {
-  color: rgb(208, 208, 208);
-  background-color: rgba(0, 0, 0, 0.294);
-}
-
-.btn-iniciarJogo {
-  position: absolute;
-  bottom: 10%;
-  left: 46%;
-}
-
-.btn-1-jogador {
-  position: absolute;
-  bottom: 38%;
-  left: 46%;
-}
-
-.btn-2-jogador {
-  position: absolute;
-  bottom: 30%;
-  left: 46%;
-}
-
-.card {
-  width: 500px;
-}
-
-.modo-jogo-selecionado {
-  border: 2px solid #f89284;
-  animation: c-glowing-red 0.8s ease-in-out infinite;
-  animation-duration: alternate;
-}
-.modo-jogo-selecionado:hover {
-  animation: c-glowing-red 0.3s ease-in-out infinite;
-  animation-duration: alternate;
-}
-
-.desabilitar {
-  opacity: 40%;
-  cursor: no-drop;
-}
-
-.btn-manual {
-  width: 70px;
-  cursor: pointer;
-  transition-duration: 0.5s;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-.btn-manual:hover {
-  width: 75px;
-}
-
-.manual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(20px);
-  visibility: hidden;
-  opacity: 0;
-  z-index: 100000;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition-duration: 0.5s;
-}
-.manual iframe {
-  max-width: 1024px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
-  border: 3px solid #ffffff;
-}
-.manual .close {
-  max-width: 45px;
-  filter: invert(1);
-  cursor: pointer;
-  position: absolute;
-  top: 30px;
-  right: 30px;
-}
-
-.manual.active {
-  visibility: visible;
-  opacity: 1;
-}
-
-.containerBoards {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  animation: backInDown;
-  animation-duration: 0.9s;
-}
-
-.inicio {
-  background-image: url(../img/imgTabuleiro/inicio.jpg);
-  background-size: cover;
-}
-
-.ponte {
-  background-image: url(../img/imgTabuleiro/ponte.jpg);
-  background-size: cover;
-}
-
-.floresta {
-  background-image: url(../img/imgTabuleiro/floresta.jpg);
-  background-size: cover;
-}
-
-.deserto {
-  background-image: url(../img/imgTabuleiro/deserto.jpg);
-  background-size: cover;
-}
-
-.vale {
-  background-image: url(../img/imgTabuleiro/vale.jpg);
-  background-size: cover;
-}
-
-.vulcao {
-  background-image: url(../img/imgTabuleiro/vulcao.jpg);
-  background-size: cover;
-}
-
-.labirinto {
-  background-image: url(../img/imgTabuleiro/labirinto.jpg);
-  background-size: cover;
-}
-
-.final {
-  background-image: url(../img/imgTabuleiro/final.jpg);
-  background-size: cover;
-}
-
-.board {
-  display: flex;
-  flex-wrap: wrap;
-  width: 406px;
-}
-.board .row {
-  display: flex;
-}
-.board .row .cell {
-  width: 100px;
-  height: 100px;
-  border: 1px solid rgb(0, 0, 0);
-}
-.board .row .caminho {
-  background-color: rgba(0, 0, 0, 0.218);
-}
-
-.containerDado {
-  position: absolute;
-  right: 2%;
-  bottom: 10%;
-}
-.containerDado .dado {
-  background: none;
-  border: 0;
-}
-.containerDado .dado .dadoImg {
-  width: 90px;
-  cursor: pointer;
-}
-
-.cardPersonagem {
+.cardPersonagem1 {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -364,21 +237,63 @@ main {
   top: 0;
   left: 0;
 }
-.cardPersonagem .icons, .cardPersonagem .cards {
+.cardPersonagem1 .icons, .cardPersonagem1 .cards {
   display: flex;
   flex-direction: column;
 }
-.cardPersonagem .icons {
+.cardPersonagem1 .icons {
   width: 150px;
 }
-.cardPersonagem .icons .icon img {
+.cardPersonagem1 .icons .icon img {
   width: 120px;
   transition-duration: 0.1s;
 }
-.cardPersonagem .icons .icon img:hover {
+.cardPersonagem1 .icons .icon img:hover {
   width: 140px;
 }
-.cardPersonagem .card {
+
+.personagem-grande {
+  text-align: center;
+  width: 40%;
+  height: 50vh;
+  position: relative;
+}
+.personagem-grande img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.personagem-grande .nome::before {
+  content: "";
+  height: 30px;
+  width: 100%;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+}
+.personagem-grande .nome h2 {
+  width: 100%;
+  color: #ffffff;
+  font-family: "commad", sans-serif;
+  font-size: 27px;
+  position: absolute;
+  bottom: 0;
+}
+
+.personagem-grande.personagem-jogador-1 .nome::before {
+  background-color: #0271F7;
+}
+
+.personagem-grande.personagem-jogador-2 .nome::before {
+  background-color: #D60223;
+}
+
+.selecao-de-personagens-card-btns .cardPersonagem {
+  width: 400px;
+}
+
+.telaTabuleiro .cardPersonagem .card {
   width: 480px;
   position: absolute;
   top: 10%;
@@ -470,4 +385,105 @@ main {
   opacity: 1;
 }
 
-/*# sourceMappingURL=estilos.css.map */
+.btn-iniciarJogo, .btn-1-jogador, .btn-2-jogador {
+  width: 150px;
+  padding: 15px;
+  border-radius: 5px;
+  transition-duration: 0.5s;
+}
+.btn-iniciarJogo:hover, .btn-1-jogador:hover, .btn-2-jogador:hover {
+  color: rgb(208, 208, 208);
+  background-color: rgba(0, 0, 0, 0.294);
+}
+
+.btn-iniciarJogo {
+  margin-top: 10px;
+}
+
+.modo-jogo-selecionado {
+  border: 2px solid #f89284;
+  animation: c-glowing-red 0.8s ease-in-out infinite;
+  animation-duration: alternate;
+}
+.modo-jogo-selecionado:hover {
+  animation: c-glowing-red 0.3s ease-in-out infinite;
+  animation-duration: alternate;
+}
+
+.desabilitar {
+  opacity: 40%;
+  cursor: no-drop;
+}
+
+.inicio {
+  background-image: url(../img/imgTabuleiro/inicio.jpg);
+  background-size: cover;
+}
+
+.ponte {
+  background-image: url(../img/imgTabuleiro/ponte.jpg);
+  background-size: cover;
+}
+
+.floresta {
+  background-image: url(../img/imgTabuleiro/floresta.jpg);
+  background-size: cover;
+}
+
+.deserto {
+  background-image: url(../img/imgTabuleiro/deserto.jpg);
+  background-size: cover;
+}
+
+.vale {
+  background-image: url(../img/imgTabuleiro/vale.jpg);
+  background-size: cover;
+}
+
+.vulcao {
+  background-image: url(../img/imgTabuleiro/vulcao.jpg);
+  background-size: cover;
+}
+
+.labirinto {
+  background-image: url(../img/imgTabuleiro/labirinto.jpg);
+  background-size: cover;
+}
+
+.final {
+  background-image: url(../img/imgTabuleiro/final.jpg);
+  background-size: cover;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 406px;
+}
+.board .row {
+  display: flex;
+}
+.board .row .cell {
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgb(0, 0, 0);
+}
+.board .row .caminho {
+  background-color: rgba(0, 0, 0, 0.218);
+}
+
+.containerDado {
+  position: absolute;
+  right: 2%;
+  bottom: 10%;
+}
+.containerDado .dado {
+  background: none;
+  border: 0;
+}
+.containerDado .dado .dadoImg {
+  width: 90px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=styles.css.map */

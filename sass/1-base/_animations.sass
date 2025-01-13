@@ -1,0 +1,25 @@
+@use 'variables' as *
+
+@keyframes c-glowing-blue
+    0%
+        box-shadow: 0 0 5px $color-blue-weak, 0 0 5px $color-blue-weak, 0 0 15px $color-blue-weak, 0 0 20px $color-blue-primary, 0 0 10px $color-blue-primary, 0 0 10px $color-blue-primary, 0 0 10px $color-blue-primary, 0 0 10px $color-blue-primary
+    to
+        box-shadow: 0 0 2.5px $color-blue-weak, 0 0 2.5px $color-blue-weak, 0 0 7.5px $color-blue-weak, 0 0 10px $color-blue-primary, 0 0 5px $color-blue-primary, 0 0 5px $color-blue-primary, 0 0 5px $color-blue-primary, 0 0 2px $color-blue-primary
+
+@keyframes c-glowing-red
+    0%
+        box-shadow: 0 0 5px $color-brown-weak, 0 0 5px $color-brown-weak, 0 0 15px $color-brown-weak, 0 0 20px $color-red-primary, 0 0 10px $color-red-primary, 0 0 10px $color-red-primary, 0 0 10px $color-red-primary, 0 0 10px $color-red-primary
+    to
+        box-shadow: 0 0 2.5px $color-brown-weak, 0 0 2.5px $color-brown-weak, 0 0 7.5px $color-brown-weak, 0 0 10px $color-red-primary, 0 0 5px $color-red-primary, 0 0 5px $color-red-primary, 0 0 5px $color-red-primary, 0 0 2px $color-red-primary
+
+@keyframes text-glowing-blue
+    0%
+        text-shadow: 0 0 1px $color-default, 0 0 1px $color-default, 0 0 1px $color-default, 0 0 1px $color-blue-middle, 0 0 5px $color-blue-middle, 0 0 2px $color-blue-middle, 0 0 10px $color-blue-middle, 0 0 10px $color-blue-middle
+    to
+        text-shadow: 0 0 .5px $color-default, 0 0 .5px $color-default, 0 0 .5px $color-default, 0 0 .5px $color-blue-middle, 0 0 5px $color-blue-middle, 0 0 .5px $color-blue-middle, 0 0 5px $color-blue-middle, 0 0 2px $color-blue-middle
+
+@keyframes text-glowing-red
+    0%
+        text-shadow: 0 0 1px $color-brown-weak, 0 0 1px $color-brown-weak, 0 0 1px $color-brown-weak, 0 0 1px $color-red-weak, 0 0 5px $color-red-weak, 0 0 2px $color-red-weak, 0 0 10px $color-red-weak, 0 0 10px $color-red-weak
+    to
+        text-shadow: 0 0 .5px $color-brown-weak, 0 0 .5px $color-brown-weak, 0 0 .5px $color-brown-weak, 0 0 .5px $color-red-weak, 0 0 5px $color-red-weak, 0 0 .5px $color-red-weak, 0 0 5px $color-red-weak, 0 0 2px $color-red-weak
