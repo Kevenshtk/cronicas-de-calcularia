@@ -13,3 +13,9 @@
 @mixin background($url)
     background-image: $url
     background-size: cover
+
+
+@mixin mobile()
+    @media (max-width:  600px)
+        @content
+        

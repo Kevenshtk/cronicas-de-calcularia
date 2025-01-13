@@ -72,11 +72,21 @@ a {
   text-align: center;
   color: white;
 }
+@media (max-width: 600px) {
+  .tela-de-selecao-titulo {
+    font-size: 25px;
+  }
+}
 .tela-de-selecao .selecao-de-personagens {
   height: 510px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 600px) {
+  .tela-de-selecao .selecao-de-personagens {
+    flex-direction: column;
+  }
 }
 .tela-de-selecao .selecao-de-personagens-card-btns, .tela-de-selecao .selecao-de-personagens-jogador-1, .tela-de-selecao .selecao-de-personagens-jogador-2 {
   width: 30%;
@@ -85,6 +95,15 @@ a {
 .tela-de-selecao .selecao-de-personagens-jogador-1, .tela-de-selecao .selecao-de-personagens-jogador-2 {
   display: flex;
   justify-content: space-around;
+}
+@media (max-width: 600px) {
+  .tela-de-selecao .selecao-de-personagens-jogador-1 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .tela-de-selecao .selecao-de-personagens-jogador-2 {
+    display: none;
+  }
 }
 .tela-de-selecao .selecao-de-personagens-card-btns {
   display: flex;
@@ -99,6 +118,15 @@ a {
   justify-content: space-around;
   gap: 8px;
   z-index: 1000;
+}
+@media (max-width: 600px) {
+  .tela-de-selecao .selecao-de-personagens-card-btns {
+    width: 390px;
+  }
+  .tela-de-selecao .selecao-de-personagens .container-btn {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 }
 
 .telaTabuleiro {
@@ -128,8 +156,18 @@ a {
   top: 10px;
   right: 10px;
 }
+@media (max-width: 600px) {
+  .btn-manual {
+    width: 50px;
+  }
+}
 .btn-manual:hover {
   width: 75px;
+}
+@media (max-width: 600px) {
+  .btn-manual:hover {
+    width: 55px;
+  }
 }
 
 .container-manual {
@@ -141,7 +179,7 @@ a {
   backdrop-filter: blur(20px);
   visibility: hidden;
   opacity: 0;
-  z-index: 100000;
+  z-index: 1000;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -151,7 +189,6 @@ a {
 .container-manual iframe {
   max-width: 1024px;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
-  border: 3px solid #ffffff;
 }
 .container-manual .btn-close {
   max-width: 45px;
@@ -160,6 +197,13 @@ a {
   position: absolute;
   top: 30px;
   right: 30px;
+}
+@media (max-width: 600px) {
+  .container-manual .btn-close {
+    max-width: 25px;
+    top: 60px;
+    right: 10px;
+  }
 }
 
 .container-manual.active {
@@ -253,10 +297,17 @@ a {
 }
 
 .personagem-grande {
-  text-align: center;
   width: 40%;
   height: 50vh;
   position: relative;
+}
+@media (max-width: 600px) {
+  .personagem-grande {
+    height: auto;
+  }
+  .personagem-grande img {
+    height: 430px;
+  }
 }
 .personagem-grande img {
   position: absolute;
@@ -277,6 +328,7 @@ a {
   color: #ffffff;
   font-family: "commad", sans-serif;
   font-size: 27px;
+  text-align: center;
   position: absolute;
   bottom: 0;
 }
@@ -390,6 +442,12 @@ a {
   padding: 15px;
   border-radius: 5px;
   transition-duration: 0.5s;
+}
+@media (max-width: 600px) {
+  .btn-iniciarJogo, .btn-1-jogador, .btn-2-jogador {
+    width: 130px;
+    padding: 10px;
+  }
 }
 .btn-iniciarJogo:hover, .btn-1-jogador:hover, .btn-2-jogador:hover {
   color: rgb(208, 208, 208);
