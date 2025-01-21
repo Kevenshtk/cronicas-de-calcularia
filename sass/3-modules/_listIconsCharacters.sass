@@ -1,4 +1,5 @@
 @use '../1-base/variables' as *
+@use '../_utilities' as *
     
 .lista-de-personagens
     width: 100%
@@ -62,23 +63,30 @@
             animation-duration: alternate
 
 .cardPersonagem1
-    width: 100%
-    display: flex
-    flex-direction: row
     position: absolute
     top: 0
     left: 0
+    z-index: 100
 
-    .icons, .cards
-        display: flex
-        flex-direction: column
+    @include mobile()
+        width: 100%
 
     .icons
         width: 150px
+        display: flex
+        flex-direction: column
+        justify-content: center
+
+        @include mobile()
+            width: 100%
+            flex-direction: row           
 
         .icon img
             width: 120px
             transition-duration: 0.10s
+
+            @include mobile()
+                width: 100px
 
             &:hover
                 width: 140px

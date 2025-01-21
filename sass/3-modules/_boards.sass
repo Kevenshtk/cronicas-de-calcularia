@@ -1,5 +1,5 @@
 @use '../_utilities' as *
-    
+
 .inicio
     @include background(url(../img/imgTabuleiro/inicio.jpg))
 
@@ -39,3 +39,7 @@
 
         .caminho
             background-color: rgba(0, 0, 0, 0.218)
+
+@include mobile()
+    #ponte, #floresta, #deserto, #final, #labirinto, #vulcao, #vale
+        display: none
