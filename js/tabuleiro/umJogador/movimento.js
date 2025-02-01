@@ -2,12 +2,12 @@ import exibirCard from './cardPertunta.js';
 
 let playerAtual = 1;
 let playerPositions = {1: 0};
-let boardAtual = 'inicio';
+let tabuleiro = {atual: 'inicio', anterior: 'inicio'};
     
 export function rollDado1() {
     let resultDado;
 
-    switch(boardAtual) {
+    switch(tabuleiro.atual) {
         case 'inicio':
             resultDado = Math.floor(Math.random() * 3) + 1;
             break;
@@ -65,32 +65,47 @@ function movePlayer(color, passos) {
     });
 
     let tabuleiroAtual = getBoardAtual(newPosition);
-    exibirCard(color, tabuleiroAtual);
-    
+
+    if(tabuleiro.atual != tabuleiro.anterior && window.innerWidth < 790) {
+        const addTabuleiro = document.getElementById(tabuleiro.atual);
+        addTabuleiro.style.display = 'block';
+        const removeTabuleiro = document.getElementById(tabuleiro.anterior);
+        removeTabuleiro.style.display = 'none';
+    }
+
+    exibirCard(color, tabuleiroAtual); 
 }
 
 function getBoardAtual(position) {
     if(position >= 0 && position <= 3) {
-        boardAtual = 'inicio';
+        tabuleiro.atual = 'inicio';
     } else if (position >= 4 && position <= 7) {
-        boardAtual = 'ponte';
+        tabuleiro.atual = 'ponte';
+        tabuleiro.anterior = 'inicio';
     } else if (position >= 8 && position <= 13) {
-        boardAtual = 'floresta';
+        tabuleiro.atual = 'floresta';
+        tabuleiro.anterior = 'ponte';
     } else if (position >= 14 && position <= 18) {
-        boardAtual = 'deserto';
+        tabuleiro.atual = 'deserto';
+        tabuleiro.anterior = 'floresta';
     } else if (position >= 19 && position <= 27) {
-        boardAtual = 'vale';
+        tabuleiro.atual = 'vale';
+        tabuleiro.anterior = 'deserto';
     } else if (position >= 28 && position <= 33) {
-        boardAtual = 'vulcao';
+        tabuleiro.atual = 'vulcao';
+        tabuleiro.anterior = 'vale';
     } else if (position >= 34 && position <= 41) {
-        boardAtual = 'labirinto';
+        tabuleiro.atual = 'labirinto';
+        tabuleiro.anterior = 'vulcao';
     } else if (position >= 34 && position <= 42){
-        boardAtual = 'final';
+        tabuleiro.atual = 'final';
+        tabuleiro.anterior = 'labirinto';
     } else {
-        boardAtual = 'fim';
+        tabuleiro.atual = 'fim';
+        tabuleiro.anterior = 'fim';
     }
 
-    return boardAtual;
+    return tabuleiro.atual;
 }
 
 function limparCell(boards, position, playerColor) {

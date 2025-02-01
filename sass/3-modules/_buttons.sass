@@ -1,10 +1,15 @@
 @use '../1-base/variables' as *
+@use '../utilities' as *
 
 .btn-iniciarJogo, .btn-1-jogador, .btn-2-jogador 
     width: 150px
     padding: 15px
     border-radius: 5px
     transition-duration: 0.5s
+
+    @include mobile()
+        width: 130px
+        padding: 10px
 
     &:hover
         color: rgb(208, 208, 208)

@@ -37,15 +37,20 @@ export function exibirCardPersonagem1() {
 
     cards.forEach((icon) => {
         icon.addEventListener('mouseenter', () => {
-            const idSelecionado = icon.id;
+            const width = window.innerWidth;
+            if(width < 790){
+                return;
+            } else {
+                const idSelecionado = icon.id;
 
-            cards.forEach((card) => {
-                card.classList.remove('selecionado');
-            });
-
-            icon.classList.add('selecionado');
-
-            cardElement.innerHTML = `<img class="cardPersonagem" src="img/imgPersona/${idSelecionado}.jpeg" alt="Personagem ${idSelecionado}">`;
+                cards.forEach((card) => {
+                    card.classList.remove('selecionado');
+                });
+    
+                icon.classList.add('selecionado');
+    
+                cardElement.innerHTML = `<img class="cardPersonagem" src="img/imgPersona/${idSelecionado}.jpeg" alt="Personagem ${idSelecionado}">`;
+            }
         });
 
         icon.addEventListener('mouseleave', () => {

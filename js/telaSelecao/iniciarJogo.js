@@ -1,11 +1,11 @@
 export function carregarTabuleiro() {
     const telaSelecao = document.querySelector('#telaSelecao');
-    const telaTabuleiro = document.querySelector('#telaTabuleiro');
-    const cardPersonagem = document.getElementById('cardPersonagem');
-    const dado = document.getElementById('dado');
+    const telaTabuleiros = document.querySelector('#telaTabuleiros');
+    const cardPersonagem = document.querySelector('#cardPersonagem');
+    const dado = document.querySelector('#dado');
 
     telaSelecao.style.display = 'none';
-    telaTabuleiro.style.display = 'block'; 
+    telaTabuleiros.style.display = 'block'; 
 
     cardPersonagem.classList.add("animate__animated");
 
