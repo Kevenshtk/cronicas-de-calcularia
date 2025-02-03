@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
-
 </head>
 
 <body>
@@ -58,20 +57,20 @@
                     <div class="container-card" id="card"></div>
                     
                     <div class="container-btn">
-                        <button id="btn-modo1" class="btn-1-jogador" onclick="modoJogo1()">1 Jogador</button>
-                        <button id="btn-modo2" class="btn-2-jogador desabilitar modo-jogo-selecionado" onclick="modoJogo2()">2 Jogadores</button>
-                        <button id="btn-iniciarJogo" class="btn-iniciarJogo" onclick="iniciarJogo()" value="2">Iniciar Jogo</button>
+                        <button id="btn-modo1" class="btn-1-jogador desabilitar modo-jogo-selecionado" onclick="modoJogo1()">1 Jogador</button>
+                        <button id="btn-modo2" class="btn-2-jogador" onclick="modoJogo2()">2 Jogadores</button>
+                        <button id="btn-iniciarJogo" class="btn-iniciarJogo" onclick="iniciarJogo()" value="1">Iniciar Jogo</button>
                     </div>
                 </div>
     
                 <div class="selecao-de-personagens-jogador-2">
-                    <div class="personagem-grande personagem-jogador-2" id="personagemJogador-2" value="">
+                    <div class="personagem-grande personagem-jogador-2 desabilitar" id="personagemJogador-2" value="">
                         <img src="img/imgPersona/druida.png" alt="Personagem selecionado jogador 2" id="personagem-jogador-2">
                         <div class="nome">
                             <h2 id="nome-jogador-2">Druida</h2>
                         </div>
                     </div>
-                    <div class="lista" id="listaJogador-2">
+                    <div class="lista desabilitar" id="listaJogador-2">
                         <ul class="lista-de-personagens" onMouseOut="exibirJogador()">
                             <li class="personagem-2" onclick="enviarEscolha('jogador2', 'bardo')" id="bardo"
                                 data-name="Bardo">
@@ -105,8 +104,7 @@
             <img class="btn-close" src="img/icons/close.png" alt="Sair" onclick="exibirManual()">
         </div>
     </section>
-
-
+    
     <section id="telaTabuleiros" class="telaTabuleiros">
         <div class="containerTabuleiros">
             <div id="inicio" class="board inicio">

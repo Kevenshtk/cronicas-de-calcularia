@@ -11,6 +11,7 @@ export function modoJogo1() {
     listaPersonagemJogador2.classList.add('desabilitar');
     personagemJogador2.classList.add('desabilitar');
     btnModo2jogadores.classList.remove('desabilitar');
+    btnModo1jogadores.classList.add('desabilitar');
     btnModo2jogadores.classList.remove('modo-jogo-selecionado');
     btnModo1jogadores.classList.add('modo-jogo-selecionado');
 
@@ -26,6 +27,7 @@ export function modoJogo2(){
 
     personagemJogador2.classList.remove('desabilitar');
     listaPersonagemJogador2.classList.remove('desabilitar');
+    btnModo1jogadores.classList.remove('desabilitar')
     btnModo2jogadores.classList.add('desabilitar');
     btnModo1jogadores.classList.remove('modo-jogo-selecionado');
     btnModo2jogadores.classList.add('modo-jogo-selecionado');
