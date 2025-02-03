@@ -205,7 +205,7 @@ const perguntasDeserto = [
         story: "Na jornada pelo deserto, uma figura solitária se destacava no horizonte. Um andarilho caminhava pela paisagem escaldante. Enquanto se aproximava de você, o mesmo dizia: O expoente de uma variável, representa quantas vezes você vai repetir esse número na multiplicação, X² repete duas vezes, X³ repete três e assim sucessivamente.",
         question: "Qual é o f(x) da função X³, quando X for 2?",
         options: ["f(x) = 10.", "f(x) = 15.", "f(x) = 9.", "f(x) = 8."],
-        correctAnswer: "f(x) = 8. "
+        correctAnswer: "f(x) = 8."
     },
 
     {
