@@ -217,7 +217,7 @@ a {
   flex-direction: column;
   justify-content: center;
 }
-.lista-de-personagens .personagem, .lista-de-personagens .personagem-2 {
+.lista-de-personagens .personagem-1p, .lista-de-personagens .personagem-2p {
   width: 100px;
   height: 100px;
   cursor: pointer;
@@ -226,12 +226,12 @@ a {
   position: relative;
   transition: 0.15s ease-in-out;
 }
-.lista-de-personagens .personagem img, .lista-de-personagens .personagem-2 img {
+.lista-de-personagens .personagem-1p img, .lista-de-personagens .personagem-2p img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-.lista-de-personagens .personagem .tag, .lista-de-personagens .personagem-2 .tag {
+.lista-de-personagens .personagem-1p .tag, .lista-de-personagens .personagem-2p .tag {
   display: none;
   font-family: "Times New Roman", Times, serif;
   position: absolute;
@@ -242,32 +242,32 @@ a {
   animation: text-glowing-blue 0.3s ease-in-out infinite;
   animation-duration: alternate;
 }
-.lista-de-personagens .personagem.selecionado {
+.lista-de-personagens .personagem-1p.selecionado {
   border: 2px solid #d3ffff;
   animation: c-glowing-blue 0.8s ease-in-out infinite;
   animation-duration: alternate;
 }
-.lista-de-personagens .personagem.selecionado .tag {
+.lista-de-personagens .personagem-1p.selecionado .tag {
   display: block;
   animation: text-glowing-red 0.3s ease-in-out infinite;
   animation-duration: alternate;
 }
-.lista-de-personagens .personagem:hover {
+.lista-de-personagens .personagem-1p.selecionado:hover {
   animation: c-glowing-blue 0.3s ease-in-out infinite;
   animation-duration: alternate;
   transform: scale(1.07);
   z-index: 2;
 }
-.lista-de-personagens .personagem-2.jogador-2-selecionado {
+.lista-de-personagens .personagem-2p.jogador-2-selecionado {
   border: 2px solid #f89284;
   animation: c-glowing-red 0.8s ease-in-out infinite;
   animation-duration: alternate;
 }
-.lista-de-personagens .personagem-2.jogador-2-selecionado:hover {
+.lista-de-personagens .personagem-2p.jogador-2-selecionado:hover {
   animation: c-glowing-red 0.3s ease-in-out infinite;
   animation-duration: alternate;
 }
-.lista-de-personagens .personagem-2.jogador-2-selecionado .tag {
+.lista-de-personagens .personagem-2p.jogador-2-selecionado .tag {
   display: block;
   animation: text-glowing-red 0.3s ease-in-out infinite;
   animation-duration: alternate;

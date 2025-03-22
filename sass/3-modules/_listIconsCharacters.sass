@@ -7,7 +7,7 @@
     flex-direction: column
     justify-content: center
 
-    .personagem, .personagem-2
+    .personagem-1p, .personagem-2p
         width: 100px
         height: 100px
         cursor: pointer
@@ -32,7 +32,7 @@
             animation: text-glowing-blue .3s ease-in-out infinite
             animation-duration: alternate
 
-    .personagem.selecionado
+    .personagem-1p.selecionado
         border: 2px solid $color-blue-middle
         animation: c-glowing-blue .8s ease-in-out infinite
         animation-duration: alternate
@@ -42,13 +42,13 @@
             animation: text-glowing-red .3s ease-in-out infinite
             animation-duration: alternate
 
-    .personagem:hover
-        animation: c-glowing-blue .3s ease-in-out infinite
-        animation-duration: alternate
-        transform: scale(1.07)
-        z-index: 2
+        &:hover
+            animation: c-glowing-blue .3s ease-in-out infinite
+            animation-duration: alternate
+            transform: scale(1.07)
+            z-index: 2
 
-    .personagem-2.jogador-2-selecionado
+    .personagem-2p.jogador-2-selecionado
         border: 2px solid $color-red-middle
         animation: c-glowing-red .8s ease-in-out infinite
         animation-duration: alternate

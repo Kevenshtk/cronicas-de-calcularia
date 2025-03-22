@@ -1,3 +1,4 @@
+//front
 export function exibirCardPersonagem() {
     const cards = document.querySelectorAll('.icon');
     const cardElement = document.getElementById('cardTabuleiro');
