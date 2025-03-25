@@ -1,5 +1,5 @@
-import{salvarModoJogo, retornaModoJogo, salvarPersonagem, retornaJogador} from './back.js';
-import{rolarDadoBack, setTabuleiro, getTabuleiro, retornaPergunta, checkPerguntaBack} from './back.js';
+import{salvarModoJogo, retornaModoJogo, salvarPersonagem, retornaJogador} from '../../controller/js/back.js';
+import{rolarDadoBack, setTabuleiro, getTabuleiro, retornaPergunta, checkPerguntaBack} from '../../controller/js/back.js';
 
 window.exibirCardPersonagem = exibirCardPersonagem();
 window.exibirJodador = exibirJodador();
@@ -26,7 +26,7 @@ function exibirJodador() {
                 personagem.classList.add('selecionado');
     
                 const imagemJogador1 = document.getElementById('personagem-jogador-1');
-                imagemJogador1.src = `img/imgPersona/${idSelecionado}.png`;
+                imagemJogador1.src = `assets/img/imgPersona/${idSelecionado}.png`;
     
                 const nomejogador1 = document.getElementById('nome-jogador-1');
                 const nomeSelecionado = personagem.getAttribute('data-name');
@@ -47,7 +47,7 @@ function exibirJodador() {
                         personagem.classList.add('jogador-2-selecionado');
             
                         const imagemJogador = document.getElementById('personagem-jogador-2');
-                        imagemJogador.src = `img/imgPersona/${idSelecionado}.png`;
+                        imagemJogador.src = `assets/img/imgPersona/${idSelecionado}.png`;
             
                         const nomejogador = document.getElementById('nome-jogador-2');
                         const nomeSelecionado = personagem.getAttribute('data-name');
@@ -76,7 +76,7 @@ function exibirCardPersonagem() {
 
                 icon.classList.add('selecionado');
 
-                cardElement.innerHTML = `<img class="cardPersonagem" src="img/imgPersona/${idSelecionado}.jpeg" alt="Personagem ${idSelecionado}">`;
+                cardElement.innerHTML = `<img class="cardPersonagem" src="assets/img/imgPersona/${idSelecionado}.jpeg" alt="Personagem ${idSelecionado}">`;
             }
         });
 
@@ -177,7 +177,7 @@ function rolarDadoFront(){
     const nova_position = dados_movimento.posicao;
     const color_player = dados_movimento.colorPlayer;
 
-    dado_img.src = `img/imgDado/dado-${result_dado}.png`;
+    dado_img.src = `assets/img/imgDado/dado-${result_dado}.png`;
 
     movePlayerFront(nova_position, color_player);
 }

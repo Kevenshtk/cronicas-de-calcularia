@@ -58,7 +58,7 @@ a {
 }
 .tela-de-selecao::before {
   content: "";
-  background-image: url(../img/fundo-site.png);
+  background-image: url(../assets/img/fundo-site.png);
   background-size: cover;
   position: absolute;
   width: 100vw;
@@ -133,7 +133,7 @@ a {
   display: none;
   width: 100vw;
   height: 100vh;
-  background-image: url(../img/fundo-site.png);
+  background-image: url(../assets/img/fundo-site.png);
   background-size: cover;
 }
 .telaTabuleiros .containerTabuleiros {
@@ -537,42 +537,42 @@ a {
 }
 
 .inicio {
-  background-image: url(../img/imgTabuleiro/inicio.jpg);
+  background-image: url(../assets/img/imgTabuleiro/inicio.jpg);
   background-size: cover;
 }
 
 .ponte {
-  background-image: url(../img/imgTabuleiro/ponte.jpg);
+  background-image: url(../assets/img/imgTabuleiro/ponte.jpg);
   background-size: cover;
 }
 
 .floresta {
-  background-image: url(../img/imgTabuleiro/floresta.jpg);
+  background-image: url(../assets/img/imgTabuleiro/floresta.jpg);
   background-size: cover;
 }
 
 .deserto {
-  background-image: url(../img/imgTabuleiro/deserto.jpg);
+  background-image: url(../assets/img/imgTabuleiro/deserto.jpg);
   background-size: cover;
 }
 
 .vale {
-  background-image: url(../img/imgTabuleiro/vale.jpg);
+  background-image: url(../assets/img/imgTabuleiro/vale.jpg);
   background-size: cover;
 }
 
 .vulcao {
-  background-image: url(../img/imgTabuleiro/vulcao.jpg);
+  background-image: url(../assets/img/imgTabuleiro/vulcao.jpg);
   background-size: cover;
 }
 
 .labirinto {
-  background-image: url(../img/imgTabuleiro/labirinto.jpg);
+  background-image: url(../assets/img/imgTabuleiro/labirinto.jpg);
   background-size: cover;
 }
 
 .final {
-  background-image: url(../img/imgTabuleiro/final.jpg);
+  background-image: url(../assets/img/imgTabuleiro/final.jpg);
   background-size: cover;
 }
 
