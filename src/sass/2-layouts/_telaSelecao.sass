@@ -1,0 +1,76 @@
+@use '../1-base/variables' as *
+@use '../_utilities' as *
+
+.tela-de-selecao 
+    width: 100vw
+    height: 100vh
+    background: $color-secundary
+
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+
+    &::before
+        content: ''
+        @include background(url(../assets/img/fundo-site.png))
+        position: absolute
+        width: 100vw
+        height: 100vh
+        opacity: 0.3
+
+    &-titulo
+        font-family: 'Berry Rotunda', sans-serif 
+        font-weight: normal
+        font-size: 80px            
+        text-align: center
+        color: white
+
+        @include mobile()
+            font-size: 40px 
+
+    .selecao-de-personagens
+        height: 510px
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        @include mobile()
+            flex-direction: column
+        
+        &-card-btns, &-jogador-1, &-jogador-2
+            width: 30%
+            height: 100%
+
+        &-jogador-1, &-jogador-2
+            display: flex
+            justify-content: space-around
+
+        @include mobile()
+            &-jogador-1
+                width: 100%
+                margin-bottom: 20px    
+
+            &-jogador-2
+                 display: none
+
+        &-card-btns
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            align-items: center
+            gap: 30px
+
+            .container-btn
+                display: flex
+                flex-direction: column
+                justify-content: space-around
+                gap: 8px
+                z-index: 1000
+
+        @include mobile()
+            &-card-btns
+                width: 390px
+
+            .container-btn
+                flex-direction: row
+                flex-wrap: wrap
