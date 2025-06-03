@@ -91,8 +91,28 @@ function manual(operacao) {
     operacao == 'abrir' ? manual.classList.add('active') : manual.classList.remove('active');
 }
 
-// colocar um alert se for selecionado o modo 2 players no mobile
+function isMobileDevice() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/android|ipad|iphone|ipod|blackberry|iemobile|opera mini/i.test(userAgent)) {
+        return true;
+    }
+
+    if (window.matchMedia && window.matchMedia("(max-width: 768px)").matches) {
+        return true;
+    }
+
+    return false;
+}
+
+
 function modoJogo(quantJogadores) {
+    if (quantJogadores === 2) {
+        if (isMobileDevice()) {
+            alert("O modo de 2 jogadores não está disponível para dispositivos móveis no momento. Por favor, jogue em um computador ou tablet com tela maior.");
+        return;
+        }
+    }
     salvarModoJogo(quantJogadores);
  
     const personagemJogador2 = document.querySelector('#personagemJogador-2');
