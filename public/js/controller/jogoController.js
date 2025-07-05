@@ -1,8 +1,10 @@
-export function salvarModoJogo(modo){
+let modoJogo = 1;
+
+export function setModoJogo(modo){
     modoJogo = modo;
 }
 
-export function retornaModoJogo(){
+export function getModoJogo(){
     return modoJogo;
 }
 

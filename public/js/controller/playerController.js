@@ -1,9 +1,16 @@
+import { getModoJogo } from '../controller/jogoController.js';
+
+const paylers = {
+    jogador1: '',
+    jogador2: ''
+};
+
 export function salvarPersonagem(jogador, personagem) {
-    if(jogador == 'jogador1'){
-        jogador1 = personagem;
+    if(jogador == 'jogador 1'){
+        paylers.jogador1 = personagem;
         return `${jogador} ${personagem}`;
-    } else if(jogador == 'jogador2' && modoJogo == 2){  
-        jogador2 = personagem;
+    } else if(jogador == 'jogador 2' && getModoJogo() == 2){  
+        paylers.jogador2 = personagem;
         return `${jogador} ${personagem}`;
     } else {
         return 'Erro, verifique o modo de jogo';
@@ -11,5 +18,5 @@ export function salvarPersonagem(jogador, personagem) {
 }
 
 export function retornaJogador(num){
-    return num == '1' ? jogador1 : jogador2;
+    return num == '1' ? paylers.jogador1 : paylers.jogador2;
 }

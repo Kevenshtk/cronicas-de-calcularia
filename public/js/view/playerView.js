@@ -1,71 +1,75 @@
-function exibirJodador() {
-    const personagens_1p = document.querySelectorAll('.personagem-1p');
-        personagens_1p.forEach((personagem) => {
-            personagem.addEventListener('mouseenter', () => {
-                const idSelecionado = personagem.attributes.id.value;
-    
-                const personagemSelecionado = document.querySelector('.selecionado');
-                personagemSelecionado.classList.remove('selecionado');
-    
-                personagem.classList.add('selecionado');
-    
-                const imagemJogador1 = document.getElementById('personagem-jogador-1');
-                imagemJogador1.src = `assets/img/imgPersona/${idSelecionado}.png`;
-    
-                const nomejogador1 = document.getElementById('nome-jogador-1');
-                const nomeSelecionado = personagem.getAttribute('data-name');
-    
-                nomejogador1.innerHTML = nomeSelecionado;
-            })
-        })
-        
-    const personagens2p = document.querySelectorAll('.personagem-2p');
-        personagens2p.forEach((personagem) => {
-                if(retornaModoJogo() == 2){
-                    personagem.addEventListener('mouseenter', () => {
-                        const idSelecionado = personagem.attributes.id.value;
-            
-                        const personagemSelecionado = document.querySelector('.jogador-2-selecionado');
-                        personagemSelecionado.classList.remove('jogador-2-selecionado');
-            
-                        personagem.classList.add('jogador-2-selecionado');
-            
-                        const imagemJogador = document.getElementById('personagem-jogador-2');
-                        imagemJogador.src = `assets/img/imgPersona/${idSelecionado}.png`;
-            
-                        const nomejogador = document.getElementById('nome-jogador-2');
-                        const nomeSelecionado = personagem.getAttribute('data-name');
-            
-                        nomejogador.innerHTML = nomeSelecionado;
-                    })
-                }
-        })    
+import { getModoJogo } from "../controller/jogoController.js";
+
+function configurarHoverPersonagem(
+  seletorClasse,
+  selecionadoClasse,
+  imgId,
+  nomeId
+) {
+  const personagens = document.querySelectorAll(seletorClasse);
+
+  personagens.forEach((personagem) => {
+    personagem.addEventListener("mouseenter", () => {
+      const idSelecionado = personagem.id;
+      const personagemSelecionado = document.querySelector(
+        `.${selecionadoClasse}`
+      );
+      if (personagemSelecionado)
+        personagemSelecionado.classList.remove(selecionadoClasse);
+
+      personagem.classList.add(selecionadoClasse);
+
+      const imagemJogador = document.getElementById(imgId);
+      imagemJogador.src = `public/assets/img/imgPersona/${idSelecionado}.png`;
+
+      const nomeJogador = document.getElementById(nomeId);
+      const nomeSelecionado = personagem.getAttribute("data-name");
+      nomeJogador.textContent = nomeSelecionado;
+    });
+  });
 }
 
-function exibirCardPersonagem() {
-    const cards = document.querySelectorAll('.icon');
-    const cardElement = document.getElementById('card');
+export function exibirJogador() {
+  configurarHoverPersonagem(
+    ".personagem-1p",
+    "selecionado",
+    "personagem-jogador-1",
+    "nome-jogador-1"
+  );
 
-    cards.forEach((icon) => {
-        icon.addEventListener('mouseenter', () => {
-            const width = window.innerWidth;
-            if (width < 790) {
-                return;
-            } else {
-                const idSelecionado = icon.id;
+  if (getModoJogo() === 2) {
+    configurarHoverPersonagem(
+      ".personagem-2p",
+      "jogador-2-selecionado",
+      "personagem-jogador-2",
+      "nome-jogador-2"
+    );
+  }
+}
 
-                cards.forEach((card) => {
-                    card.classList.remove('selecionado');
-                });
+function configurarHoverCardIcon(iconSelector, cardContainerId) {
+  const icons = document.querySelectorAll(iconSelector);
+  const cardContainer = document.getElementById(cardContainerId);
 
-                icon.classList.add('selecionado');
+  icons.forEach((icon) => {
+    icon.addEventListener("mouseenter", () => {
+      if (window.innerWidth < 790) return;
 
-                cardElement.innerHTML = `<img class="cardPersonagem" src="assets/img/imgPersona/${idSelecionado}.jpeg" alt="Personagem ${idSelecionado}">`;
-            }
-        });
+      icons.forEach((el) => el.classList.remove("selecionado"));
+      icon.classList.add("selecionado");
 
-        icon.addEventListener('mouseleave', () => {
-            cardElement.innerHTML = '';
-        });
+      const idSelecionado = icon.id;
+      cardContainer.innerHTML = `
+        <img class="cardPersonagem" src="public/assets/img/imgPersona/${idSelecionado}.jpeg" alt="Personagem ${idSelecionado}">
+      `;
     });
+
+    icon.addEventListener("mouseleave", () => {
+      cardContainer.innerHTML = "";
+    });
+  });
+}
+
+export function exibirCardPersonagem() {
+  configurarHoverCardIcon(".icon", "card");
 }
