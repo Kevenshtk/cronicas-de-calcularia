@@ -2,12 +2,8 @@ import { isMobileDevice } from "../utils/index.js";
 import { salvarPersonagem, retornaJogador } from "../controller/playerController.js";
 import { setModoJogo, getModoJogo } from "../controller/jogoController.js";
 
-export function exibirManual(operacao) {
-  const manual = document.querySelector(".container-manual");
-
-  operacao == "abrir"
-    ? manual.classList.add("active")
-    : manual.classList.remove("active");
+export function exibirManual() {
+  document.querySelector(".container-manual").classList.toggle("active");
 }
 
 export function enviarEscolha(jogador, personagem) {
@@ -28,24 +24,19 @@ export function modoJogoFront(quantJogadores) {
 
   const personagemJogador2 = document.querySelector("#personagemJogador-2");
   const listaPersonagemJogador2 = document.querySelector("#listaJogador-2");
-  const btnModo1jogadores = document.querySelector("#btn-modo1");
-  const btnModo2jogadores = document.querySelector("#btn-modo2");
+  const btnModo1 = document.querySelector("#btn-modo1");
+  const btnModo2 = document.querySelector("#btn-modo2");
 
-  if (quantJogadores === 1) {
-    listaPersonagemJogador2.classList.add("desabilitar");
-    personagemJogador2.classList.add("desabilitar");
-    btnModo2jogadores.classList.remove("desabilitar");
-    btnModo1jogadores.classList.add("desabilitar");
-    btnModo2jogadores.classList.remove("modo-jogo-selecionado");
-    btnModo1jogadores.classList.add("modo-jogo-selecionado");
-  } else {
-    personagemJogador2.classList.remove("desabilitar");
-    listaPersonagemJogador2.classList.remove("desabilitar");
-    btnModo1jogadores.classList.remove("desabilitar");
-    btnModo2jogadores.classList.add("desabilitar");
-    btnModo1jogadores.classList.remove("modo-jogo-selecionado");
-    btnModo2jogadores.classList.add("modo-jogo-selecionado");
-  }
+  const isModo1 = quantJogadores === 1;
+
+  personagemJogador2.classList.toggle("desabilitar", isModo1);
+  listaPersonagemJogador2.classList.toggle("desabilitar", isModo1);
+
+  btnModo1.classList.toggle("desabilitar", isModo1);
+  btnModo2.classList.toggle("desabilitar", !isModo1);
+
+  btnModo1.classList.toggle("modo-jogo-selecionado", isModo1);
+  btnModo2.classList.toggle("modo-jogo-selecionado", !isModo1);
 }
 
 export function iniciarJogo() {

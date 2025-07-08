@@ -4,10 +4,10 @@ import { modoJogoFront, enviarEscolha, iniciarJogo } from './view/jogoView.js';
 
 
 document.getElementById('btnOpenManual')
-  .addEventListener('click', () => exibirManual('abrir'));
+  .addEventListener('click', () => exibirManual());
 
 document.getElementById('btnCloseManual')
-  .addEventListener('click', () => exibirManual('fechar'));
+  .addEventListener('click', () => exibirManual());
 
 document.getElementById('listaJogador-1')
     .addEventListener('mouseenter', () => {
