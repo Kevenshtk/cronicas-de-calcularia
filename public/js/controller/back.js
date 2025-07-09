@@ -1,6 +1,6 @@
-import { limparCell, movePlayerFront }from './index.js';
+import { limparCell, movePlayerFront }from '../../view/js/index.js';
 import {perguntasInicio, perguntasPonte, perguntasFloresta, perguntasDeserto, perguntasVale, 
-    perguntasVulcao, perguntasLabirinto, perguntasCastelo, perguntasFinal} from "./tabuleiro/dados/perguntas.js";
+    perguntasVulcao, perguntasLabirinto, perguntasCastelo, perguntasFinal} from "../../model/perguntas.js";
 
 let jogador1 = null;
 let jogador2 = null;

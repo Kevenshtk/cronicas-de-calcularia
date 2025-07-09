@@ -1,0 +1,45 @@
+@use '../_utilities' as *
+
+.inicio
+    @include background(url(../assets/img/imgTabuleiro/inicio.jpg))
+
+.ponte
+    @include background(url(../assets/img/imgTabuleiro/ponte.jpg))
+
+.floresta
+    @include background(url(../assets/img/imgTabuleiro/floresta.jpg))
+
+.deserto
+    @include background(url(../assets/img/imgTabuleiro/deserto.jpg))
+
+.vale
+    @include background(url(../assets/img/imgTabuleiro/vale.jpg))
+
+.vulcao
+    @include background(url(../assets/img/imgTabuleiro/vulcao.jpg))
+
+.labirinto
+    @include background(url(../assets/img/imgTabuleiro/labirinto.jpg))
+
+.final
+    @include background(url(../assets/img/imgTabuleiro/final.jpg))
+
+.board
+    display: flex
+    flex-wrap: wrap
+    width: 406px
+
+    .row
+        display: flex
+
+        .cell
+            width: 100px
+            height: 100px
+            border: 1px solid rgb(0, 0, 0)
+
+        .caminho
+            background-color: rgba(0, 0, 0, 0.218)
+
+@include mobile()
+    #ponte, #floresta, #deserto, #final, #labirinto, #vulcao, #vale
+        display: none
