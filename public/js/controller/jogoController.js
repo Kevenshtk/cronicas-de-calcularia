@@ -1,3 +1,5 @@
+import { getPlayerAtual, setPlayerAtual } from "./tabuleiroController.js";
+
 let modoJogo = 1;
 
 export function setModoJogo(modo){
@@ -8,8 +10,8 @@ export function getModoJogo(){
     return modoJogo;
 }
 
-function torcarPalayer(){
+export function torcarPalayer(){
     if(modoJogo === 2){
-        playerAtual = playerAtual === 1 ? 2 : 1;
+        setPlayerAtual(getPlayerAtual() === 1 ? 2 : 1);
     }  
  }

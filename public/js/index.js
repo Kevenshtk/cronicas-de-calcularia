@@ -1,7 +1,7 @@
 import { exibirJogador, exibirCardPersonagem } from './view/playerView.js';
 import { exibirManual } from './view/jogoView.js';
 import { modoJogoFront, enviarEscolha, iniciarJogo } from './view/jogoView.js';
-
+import { rolarDadoFront } from './view/tabuleiroView.js';
 
 document.getElementById('btnOpenManual')
   .addEventListener('click', () => exibirManual());
@@ -40,3 +40,8 @@ document.querySelectorAll('.personagem-2p').forEach((element) => {
 document.querySelector('#btn-iniciarJogo').addEventListener('click', () => {
         iniciarJogo();
 });
+
+
+document.getElementById('jogarDado').addEventListener('click', () => {
+    rolarDadoFront();
+})

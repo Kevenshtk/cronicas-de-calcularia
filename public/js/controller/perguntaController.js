@@ -1,67 +1,92 @@
-export function retornaPergunta(){
-    let perguntas = null;
+import { getTabuleiro, movePlayerBack } from "./tabuleiroController.js";
+import {
+  perguntasInicio,
+  perguntasPonte,
+  perguntasFloresta,
+  perguntasDeserto,
+  perguntasVale,
+  perguntasVulcao,
+  perguntasLabirinto,
+  perguntasCastelo,
+  perguntasFinal,
+} from "../model/perguntas.js";
+import { movePlayerFront } from "../view/tabuleiroView.js";
+import { torcarPalayer } from "./jogoController.js";
+import { getPlayerAtual } from "./tabuleiroController.js";
 
-    switch(tabuleiro.atual) {
-        case 'inicio':
-            perguntas = perguntasInicio;
-        break;
-        case 'ponte':
-            perguntas = perguntasPonte;
-        break;
-        case 'floresta':
-            perguntas = perguntasFloresta;
-        break;
-        case 'deserto':
-            perguntas = perguntasDeserto;
-        break;
-        case 'vale':
-            perguntas = perguntasVale;
-        break;
-        case 'vulcao':
-            perguntas = perguntasVulcao;
-        break;
-        case 'labirinto':
-            perguntas = perguntasLabirinto;
-        break;
-        case 'final':
-            perguntas = perguntasCastelo;
-        break;
-        case 'fim':
-            perguntas = perguntasFinal;
-        break;
-    }
+export function retornaPergunta() {
+  const { atual } = getTabuleiro();
+  let perguntas = null;
 
-    const randomIndex = Math.floor(Math.random() * perguntas.length);
-    return perguntas[randomIndex];
+  switch (atual) {
+    case "inicio":
+      perguntas = perguntasInicio;
+      break;
+    case "ponte":
+      perguntas = perguntasPonte;
+      break;
+    case "floresta":
+      perguntas = perguntasFloresta;
+      break;
+    case "deserto":
+      perguntas = perguntasDeserto;
+      break;
+    case "vale":
+      perguntas = perguntasVale;
+      break;
+    case "vulcao":
+      perguntas = perguntasVulcao;
+      break;
+    case "labirinto":
+      perguntas = perguntasLabirinto;
+      break;
+    case "final":
+      perguntas = perguntasCastelo;
+      break;
+    case "fim":
+      perguntas = perguntasFinal;
+      break;
+  }
+  
+  const randomIndex = Math.floor(Math.random() * perguntas.length);
+  return perguntas[randomIndex];
 }
 
-export function checkPerguntaBack(respostaUser, pergunta){
-    const { correctAnswer } = pergunta;
-    let novaPosicao;
+export function checkPerguntaBack(respostaUser, pergunta, tabuleiroAtual) {
+  const { correctAnswer } = pergunta;
+  let novaPosicao;
 
-    if(respostaUser === correctAnswer) {
-        if(tabuleiro.atual === 'fim'){
-            return 'correta';
+  const returnCheck = {
+    status: null,
+    correctAnswer: null
+  }
 
-        } else {
-            novaPosicao = movePlayerBack(color, 1);
-            movePlayerFront(novaPosicao, color);
-            torcarPalayer();
-            return 'correta';
-        }
+  let color;
+  getPlayerAtual() === 1 ? (color = "blue") : (color = "red");
 
+  if (respostaUser === correctAnswer) {
+    if (tabuleiroAtual === "fim") {
+      returnCheck.status = "correta";
     } else {
-        if(tabuleiro.atual === 'fim'){
-            novaPosicao = movePlayerBack(color, -4);
-            movePlayerFront(novaPosicao, color);
-            torcarPalayer();
-            return 'incorreta';
-
-        } else {
-            novaPosicao = movePlayerBack(color, -1);
-            movePlayerFront(novaPosicao, color);
-            torcarPalayer();
-            return 'incorreta';
-        }
+      novaPosicao = movePlayerBack(color, 1);
+      movePlayerFront(novaPosicao, color);
+      torcarPalayer();
+      returnCheck.status = "correta";
     }
+  } else {
+    if (tabuleiroAtual === "fim") {
+      novaPosicao = movePlayerBack(color, -4);
+      movePlayerFront(novaPosicao, color);
+      torcarPalayer();
+      returnCheck.status = "incorreta";
+    } else {
+      novaPosicao = movePlayerBack(color, -1);
+      movePlayerFront(novaPosicao, color);
+      torcarPalayer();
+      returnCheck.status = "incorreta";
+      returnCheck.correctAnswer = correctAnswer;
+    }
+  }
+  
+  return returnCheck;
 }
