@@ -1,16 +1,49 @@
-# cronicas-calculario
+# Crônicas de Calculária
 
-Crônicas de Calculária é um jogo competitivo que combina conceitos matemáticos com elementos de aventura inspirados em jogos de RPG, como Dungeons & Dragons. A cada partida, um ou dois jogadores terão que explorar diferentes tabuleiros, mergulhar em uma história cativante e aprimorar suas habilidades matemática. Competindo entre si, os jogadores buscam se tornar o vencedor, enquanto seus personagens embarcam em uma jornada para resgatar a princesa de Calculária das garras do inimigo.
+## Índice
 
-## Imagens do projeto
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Funcionalidades](#funcionalidades)
+- [Instalação](#instalação)
+- [Instalação](#instalação)
+- [Como Usar](#como-usar)
 
-Tela de seleção de personagens:
-    ![Imagem tela inicio](https://kevenshtk.github.io/cronicas-de-calcularia/img/inicio.png)
+## Sobre o Projeto
+
+**Crônicas de Calculária** é um jogo competitivo que combina conceitos matemáticos com elementos de aventura inspirados em jogos de RPG, como *Dungeons & Dragons*. A cada partida, um ou dois jogadores terão que explorar diferentes tabuleiros, mergulhar em uma história cativante e aprimorar suas habilidades matemática. Competindo entre si, os jogadores buscam se tornar o vencedor, enquanto seus personagens embarcam em uma jornada para resgatar a princesa de Calculária das garras do inimigo.
+
+## Tecnologias Utilizadas
+
+<img align="center" src="https://skillicons.dev/icons?i=html,sass,js,nodejs" alt="icons"/>
+
+
+## Funcionalidades
+
+- Escolha de personagens
+- Modo de jogo com 1 ou 2 jogadores
+- Interface responsiva
+- Sistema de movimentação em tabuleiro
+
+### Funcionalidades em Desenvolvimento
+
+- Sistema de vantagem e desvantagem dos personagens
+- Modo de demostração
+
+
+## Instalação
+
+1. Clone o repositório:
+   ```terminal
+   git clone https://github.com/Kevenshtk/cronicas-de-calcularia.git
    
-Tela dos tabuleiros:
-   ![Imagem tabuleiros](https://kevenshtk.github.io/cronicas-de-calcularia/img/tabuleiro.png)
+2. Abra a pasta no VS Code e inicie com o Live Server:  
+   Atalho: Alt+L, depois Alt+O
 
 
+## Como Usar
 
-## Tecnologias usadas
-<img align="center" src="https://skillicons.dev/icons?i=html,sass,js" alt="icons"/>
+- Cada jogador escolhe seu personagem.
+- Ao clicar no dado, é exibido um card com uma pergunta de múltipla escolha, contendo apenas uma alternativa correta.
+- O card apresenta  uma breve história de acordo com o tabuleiro atual onde é indicado qual o conceito matemático necessário para resolver a questão (com exeção ao ultimo tabuleiro).
+- Se a resposta está correta, o jogador avança 1 casa, porém, se estiver incorre recua 1 casa. No ultimo tabuleiro, uma resposta errada faz o jogador retornar ao tabuleiro anterior.
