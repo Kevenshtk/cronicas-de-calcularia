@@ -6,7 +6,6 @@
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Funcionalidades](#funcionalidades)
 - [Instalação](#instalação)
-- [Instalação](#instalação)
 - [Como Usar](#como-usar)
 
 ## Sobre o Projeto
