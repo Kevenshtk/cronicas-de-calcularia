@@ -5,7 +5,7 @@ import { rolarDadoFront } from './view/tabuleiroView.js';
 
 Swal.fire({
   title: "Projeto em Construção",
-  text: "funcionalidades como sistema de vantagens e desvantagens aonda não estão disponíveis e bugs podem ser encontrados.",
+  text: "funcionalidades como sistema de vantagens e desvantagens não estão disponíveis e bugs podem ser encontrados.",
   icon: "warning"
 });
 
