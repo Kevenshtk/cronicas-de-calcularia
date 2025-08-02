@@ -3,6 +3,13 @@ import { exibirManual } from './view/jogoView.js';
 import { modoJogoFront, enviarEscolha, iniciarJogo } from './view/jogoView.js';
 import { rolarDadoFront } from './view/tabuleiroView.js';
 
+Swal.fire({
+  title: "Projeto em Construção",
+  text: "funcionalidades como sistema de vantagens e desvantagens estão em desenvolvimento",
+  icon: "warning"
+});
+
+
 document.getElementById('btnOpenManual')
   .addEventListener('click', () => exibirManual());
 
