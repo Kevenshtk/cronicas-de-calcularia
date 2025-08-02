@@ -16,10 +16,11 @@
 
 <img align="center" src="https://skillicons.dev/icons?i=html,sass,js,nodejs" alt="icons"/>
 
-## Tela Inicial
-
+## Telas
+### Tela Inicial
 ![Tela Inicial](https://kevenshtk.github.io/cronicas-de-calcularia/public/assets/img/inicio.png)
 
+### Tela dos Tabuleiros
 ![Tela dos Tabuleiros](https://kevenshtk.github.io/cronicas-de-calcularia/public/assets/img/tabuleiro.png)
 
 
