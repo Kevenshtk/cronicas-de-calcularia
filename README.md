@@ -12,6 +12,8 @@
 
 **Crônicas de Calculária** é um jogo competitivo que combina conceitos matemáticos com elementos de aventura inspirados em jogos de RPG, como *Dungeons & Dragons*. A cada partida, um ou dois jogadores terão que explorar diferentes tabuleiros, mergulhar em uma história cativante e aprimorar suas habilidades matemática. Competindo entre si, os jogadores buscam se tornar o vencedor, enquanto seus personagens embarcam em uma jornada para resgatar a princesa de Calculária das garras do inimigo.
 
+[Artigo Dio](https://web.dio.me/articles/do-tabuleiro-a-sala-de-aula-aprendendo-matematica-com-jogos-de-rpg-3d244678763b?back=/articles)
+
 ## Tecnologias Utilizadas
 
 <img align="center" src="https://skillicons.dev/icons?i=html,sass,js,nodejs" alt="icons"/>
